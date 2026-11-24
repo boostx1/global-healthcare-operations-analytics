@@ -96,5 +96,5 @@ Open `dashboard/index.html` in any browser to explore the interactive BI dashboa
 
 ## Author
 
-**Subhi Alloush** — M.Sc. Engineering Student in AI & Machine Learning (Blekinge Institute of Technology, Sweden) with 3+ years of frontline healthcare experience.  
+**Subhi Alloush** — M.Sc. Engineering Student in AI & Machine Learning (Blekinge Institute of Technology, Sweden)
 [LinkedIn](https://www.linkedin.com/in/subhi-alloush-aa4001352/) · [GitHub](https://github.com/boostx1)
