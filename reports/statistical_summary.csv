@@ -1,0 +1,9 @@
+test_id,hypothesis,method,statistic,p_value,effect_summary,decision
+T1,JCI accreditation reduces 30-day readmission rate,Two-Proportion Z-test & Chi-square,"Z = -6.52, OR = 0.519",7.04e-11,JCI 7.77% vs Non-JCI 13.97% (44.4% RRR),Reject H0 (Significant)
+T2,JCI accreditation reduces clinical complication rate,Two-Proportion Z-test & Chi-square,"Z = -4.658, OR = 0.632",3.19e-06,JCI 9.5% vs Non-JCI 14.25% (33.3% RRR),Reject H0 (Significant)
+T3,Medical tourists experience shorter elective wait times than domestic patients,Welch's t-test & Mann-Whitney U,t = -25.193,1.28e-127,Medical tourists 11.83d vs Domestic 21.11d,Reject H0 (Significant)
+T4,Elective wait times differ significantly across the 8 destination countries,One-way ANOVA & Kruskal-Wallis H,"F = 559.03, H = 2259.37",0.00e+00,Substantial cross-country capacity & scheduling variance across 8 nations,Reject H0 (Significant)
+T5,Longer wait times negatively correlate with patient satisfaction,Pearson r & Spearman rho,"r = -0.5162, rho = -0.4725",0.00e+00,Significant negative association between scheduling delay and patient ratings,Reject H0 (Significant)
+T6,Clinical & operational factors jointly explain patient satisfaction,OLS Multiple Linear Regression (7 predictors),"R2 = 0.6716, F = 1694.33",1.11e-16,"Explains 67.2% of observed satisfaction variance (n=5,807)",Model Significant (p < 0.001)
+T7,"Clinical complexity, complications & comorbidity predict Length of Stay",OLS Multiple Linear Regression (5 predictors),"R2 = 0.9233, F = 14438.94",1.11e-16,Explains 92.3% of LOS variance; complications add ~2.4 days,Model Significant (p < 0.001)
+T8,Real World Bank out-of-pocket burden correlates inversely with life expectancy (8 countries),Spearman Rank Correlation (World Bank API),rho = -0.1429,0.7358,Higher household out-of-pocket share aligns with lower national life expectancy,Directional (n=8 macro benchmark)

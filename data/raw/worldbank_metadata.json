@@ -1,0 +1,67 @@
+{
+  "source": "World Bank Open Data API v2",
+  "retrieved_utc": "2026-11-24T00:38:24.111624+00:00",
+  "year_range": "2015:2024",
+  "countries": {
+    "ARE": "United Arab Emirates",
+    "SWE": "Sweden",
+    "DEU": "Germany",
+    "TUR": "Turkey",
+    "THA": "Thailand",
+    "IND": "India",
+    "SGP": "Singapore",
+    "USA": "United States"
+  },
+  "indicators": {
+    "SH.MED.BEDS.ZS": "hospital_beds_per_1000",
+    "SH.MED.PHYS.ZS": "physicians_per_1000",
+    "SH.XPD.CHEX.PC.CD": "health_spend_per_capita_usd",
+    "SH.XPD.CHEX.GD.ZS": "health_spend_pct_gdp",
+    "SH.XPD.OOPC.CH.ZS": "out_of_pocket_pct_health_spend",
+    "SP.DYN.LE00.IN": "life_expectancy_years",
+    "SP.DYN.IMRT.IN": "infant_mortality_per_1000",
+    "NY.GDP.PCAP.CD": "gdp_per_capita_usd"
+  },
+  "indicator_counts": {
+    "hospital_beds_per_1000": {
+      "total_rows": 80,
+      "non_null_rows": 67,
+      "missing_rows": 13
+    },
+    "physicians_per_1000": {
+      "total_rows": 80,
+      "non_null_rows": 58,
+      "missing_rows": 22
+    },
+    "health_spend_per_capita_usd": {
+      "total_rows": 80,
+      "non_null_rows": 74,
+      "missing_rows": 6
+    },
+    "health_spend_pct_gdp": {
+      "total_rows": 80,
+      "non_null_rows": 74,
+      "missing_rows": 6
+    },
+    "out_of_pocket_pct_health_spend": {
+      "total_rows": 80,
+      "non_null_rows": 74,
+      "missing_rows": 6
+    },
+    "life_expectancy_years": {
+      "total_rows": 80,
+      "non_null_rows": 80,
+      "missing_rows": 0
+    },
+    "infant_mortality_per_1000": {
+      "total_rows": 80,
+      "non_null_rows": 80,
+      "missing_rows": 0
+    },
+    "gdp_per_capita_usd": {
+      "total_rows": 80,
+      "non_null_rows": 80,
+      "missing_rows": 0
+    }
+  }
+}

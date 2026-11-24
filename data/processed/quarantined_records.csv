@@ -1,0 +1,30 @@
+encounter_id,patient_token,hospital_id,procedure_code,is_medical_tourist,referral_channel,admission_date,discharge_date,wait_time_days,length_of_stay_days,complication_flag,readmission_30d_flag,clinical_outcome_score,patient_satisfaction,quarantine_reason
+ENC-000001,PT-BDE471053F22,HOSP-DEU-01,PROC-DIAG-01,1,International Insurer Network,2023-03-16,2023-03-17,18,1,0,0,90.81,4.62,Duplicate encounter_id
+ENC-000051,PT-B08AB83F68D8,HOSP-SWE-03,PROC-CARD-01,0,Direct Hospital Portal,2023-05-29,2023-06-07,26,9,1,1,70.19,2.39,Duplicate encounter_id
+ENC-000101,PT-6D84D5245E62,HOSP-TUR-01,PROC-CARD-01,1,Physician Cross-Border Referral,2024-06-24,2024-07-01,11,7,0,0,92.35,4.8,Duplicate encounter_id
+ENC-000151,PT-18C2ED9CFD2D,HOSP-ARE-02,PROC-NEUR-01,1,Medical Tourism Facilitator,2024-07-17,2024-07-20,13,3,0,0,91.8,4.86,Duplicate encounter_id
+ENC-000201,PT-1EFAB9F59B7A,HOSP-THA-02,PROC-ORTH-01,1,Physician Cross-Border Referral,2024-05-20,2024-05-25,6,5,0,0,90.71,4.88,Duplicate encounter_id
+ENC-000251,PT-317F3B4262CE,HOSP-IND-03,PROC-ORTH-01,0,Direct Hospital Portal,2025-07-13,2025-07-19,3,6,1,1,72.25,3.77,Duplicate encounter_id
+ENC-000301,PT-6C1B6754E45F,HOSP-DEU-01,PROC-ONCO-01,1,Direct Hospital Portal,2025-03-17,2025-03-24,30,7,0,0,82.69,4.11,Duplicate encounter_id
+ENC-000351,PT-CEC8C98834FF,HOSP-USA-02,PROC-ORTH-02,0,Corporate Employer Program,2023-01-19,2023-01-27,15,8,1,1,58.47,3.29,Duplicate encounter_id
+ENC-000401,PT-8F5F8CA39CB8,HOSP-ARE-01,PROC-OPHT-02,0,Direct Hospital Portal,2025-02-20,2025-02-20,6,0,0,0,93.26,5.0,Duplicate encounter_id
+ENC-000451,PT-D09303D58482,HOSP-USA-02,PROC-ORTH-03,0,Direct Hospital Portal,2023-09-28,2023-10-05,18,7,0,1,76.87,3.98,Duplicate encounter_id
+ENC-000501,PT-17302FBF0C63,HOSP-ARE-02,PROC-DENT-01,1,International Insurer Network,2023-11-05,2023-11-06,11,1,0,0,93.14,4.96,Duplicate encounter_id
+ENC-000551,PT-E6B83B4A990E,HOSP-THA-03,PROC-ORTH-02,0,Direct Hospital Portal,2025-11-09,2025-11-13,10,4,0,0,88.24,4.17,Duplicate encounter_id
+ENC-000601,PT-311407D64252,HOSP-THA-02,PROC-NEUR-01,1,Medical Tourism Facilitator,2025-04-23,2025-04-26,3,3,0,0,82.48,4.77,Duplicate encounter_id
+ENC-000651,PT-4537D71FE475,HOSP-SGP-02,PROC-ORTH-01,0,Physician Cross-Border Referral,2025-07-31,2025-08-06,10,6,1,0,77.04,,Duplicate encounter_id
+ENC-000701,PT-A329DBBE1CA0,HOSP-ARE-02,PROC-OPHT-02,1,Physician Cross-Border Referral,2025-04-16,2025-04-19,8,3,1,0,84.28,3.79,Duplicate encounter_id
+ENC-000751,PT-D736B57EA889,HOSP-ARE-03,PROC-ORTH-02,1,Corporate Employer Program,2023-04-23,2023-04-29,4,6,0,0,87.25,5.0,Duplicate encounter_id
+ENC-000801,PT-A77CABFB6EDE,HOSP-TUR-02,PROC-OPHT-02,1,Physician Cross-Border Referral,2025-10-10,2025-10-10,11,0,0,0,94.94,4.73,Duplicate encounter_id
+ENC-000851,PT-4BEBF2918039,HOSP-TUR-02,PROC-OPHT-01,1,International Insurer Network,2025-07-12,2025-07-13,8,1,0,0,89.39,4.13,Duplicate encounter_id
+ENC-ORP-001,PT-E7FBC36D37FE,HOSP-UNKNOWN-99,PROC-CARD-01,1,Medical Tourism Facilitator,2024-08-10,2024-08-17,10,7,0,0,91.0,4.5,Foreign key violation (unknown hospital/patient/procedure)
+ENC-ORP-002,PT-2BABA2E01E41,HOSP-UNKNOWN-99,PROC-CARD-01,1,Medical Tourism Facilitator,2024-08-10,2024-08-17,10,7,0,0,91.0,4.5,Foreign key violation (unknown hospital/patient/procedure)
+ENC-ORP-003,PT-1CA348E6D8C9,HOSP-UNKNOWN-99,PROC-CARD-01,1,Medical Tourism Facilitator,2024-08-10,2024-08-17,10,7,0,0,91.0,4.5,Foreign key violation (unknown hospital/patient/procedure)
+ENC-ORP-004,PT-7C66E3F70BF0,HOSP-UNKNOWN-99,PROC-CARD-01,1,Medical Tourism Facilitator,2024-08-10,2024-08-17,10,7,0,0,91.0,4.5,Foreign key violation (unknown hospital/patient/procedure)
+ENC-ORP-005,PT-2D55804F1665,HOSP-UNKNOWN-99,PROC-CARD-01,1,Medical Tourism Facilitator,2024-08-10,2024-08-17,10,7,0,0,91.0,4.5,Foreign key violation (unknown hospital/patient/procedure)
+ENC-BAD-001,PT-4A48D59BDC36,HOSP-ARE-01,PROC-ORTH-01,1,Direct Hospital Portal,2024-06-15,2024-06-12,5,-3,0,0,88.0,6.4,Out-of-range clinical/satisfaction value (e.g. negative LOS or satisfaction > 5)
+ENC-BAD-002,PT-AE0159FED295,HOSP-ARE-01,PROC-ORTH-01,1,Direct Hospital Portal,2024-06-15,2024-06-12,5,-3,0,0,88.0,6.4,Out-of-range clinical/satisfaction value (e.g. negative LOS or satisfaction > 5)
+ENC-BAD-003,PT-12B9B5955F2A,HOSP-ARE-01,PROC-ORTH-01,1,Direct Hospital Portal,2024-06-15,2024-06-12,5,-3,0,0,88.0,6.4,Out-of-range clinical/satisfaction value (e.g. negative LOS or satisfaction > 5)
+ENC-BAD-004,PT-C9FBD492EE58,HOSP-ARE-01,PROC-ORTH-01,1,Direct Hospital Portal,2024-06-15,2024-06-12,5,-3,0,0,88.0,6.4,Out-of-range clinical/satisfaction value (e.g. negative LOS or satisfaction > 5)
+ENC-BAD-005,PT-5001FC9E9345,HOSP-ARE-01,PROC-ORTH-01,1,Direct Hospital Portal,2024-06-15,2024-06-12,5,-3,0,0,88.0,6.4,Out-of-range clinical/satisfaction value (e.g. negative LOS or satisfaction > 5)
+ENC-BAD-006,PT-DF1F86F1B4E7,HOSP-ARE-01,PROC-ORTH-01,1,Direct Hospital Portal,2024-06-15,2024-06-12,5,-3,0,0,88.0,6.4,Out-of-range clinical/satisfaction value (e.g. negative LOS or satisfaction > 5)

@@ -1,0 +1,3 @@
+accreditation_status,jci_accredited,hospital_count,encounter_count,readmission_rate_pct,complication_rate_pct,avg_clinical_outcome,avg_satisfaction,avg_wait_days,avg_los_days,avg_procedure_cost_usd
+Non-JCI Accredited,0,7,1095,13.97,14.25,83.46,4.03,19.46,4.01,21282.0
+JCI Accredited,1,17,4905,7.77,9.5,87.72,4.5,14.16,3.72,21926.0

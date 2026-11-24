@@ -1,0 +1,25 @@
+hospital_id,hospital_name,city,country_code,country_name,region,hospital_tier,jci_accredited,licensed_beds,avg_bed_occupancy_pct,total_encounters,intl_encounters,intl_patient_share_pct,avg_wait_days,avg_los_days,readmission_rate_pct,complication_rate_pct,avg_clinical_outcome,avg_satisfaction,avg_procedure_cost_usd,avg_total_cost_usd,avg_savings_pct,avg_case_complexity,composite_quality_score,quality_rank,country_rank
+HOSP-THA-01,Siam International Medical Center,Bangkok,THA,Thailand,Southeast Asia,Quaternary,1,530,76.5,317,275,86.8,6.78,3.85,5.68,5.99,88.02,4.67,14698.0,17463.0,12.1,2.91,81.4,1,1
+HOSP-SGP-02,Marina Oncology & Diagnostics Center,Singapore,SGP,Singapore,Southeast Asia,Specialty Center,1,210,79.0,245,154,62.9,9.96,3.79,5.71,6.53,87.9,4.62,27839.0,29771.0,-76.1,2.91,80.58,2,1
+HOSP-THA-02,Chao Phraya Heart & Spine Hospital,Bangkok,THA,Thailand,Southeast Asia,Tertiary,1,320,78.2,343,289,84.3,6.96,3.53,7.0,7.0,88.1,4.64,13645.0,16273.0,15.7,2.78,78.64,3,2
+HOSP-ARE-03,Jumeirah Surgical Institute,Dubai,ARE,United Arab Emirates,Middle East (GCC),Specialty Center,1,145,74.2,282,201,71.3,7.78,3.88,5.67,8.87,87.46,4.63,23351.0,25666.0,-46.1,2.94,78.17,4,1
+HOSP-IND-01,Indraprastha Apex Health Institute,New Delhi,IND,India,South Asia,Quaternary,1,680,83.7,299,238,79.6,11.89,3.39,6.02,8.7,87.89,4.55,8628.0,11120.0,27.4,2.7,77.74,5,1
+HOSP-SGP-01,Pacific Rim Quaternary Medical Hub,Singapore,SGP,Singapore,Southeast Asia,Quaternary,1,490,83.2,279,179,64.2,13.72,3.63,5.38,10.75,87.85,4.52,26987.0,28964.0,-75.1,2.83,76.35,6,2
+HOSP-DEU-01,Bavaria International Klinikum,Munich,DEU,Germany,Western Europe,Quaternary,1,560,82.0,408,302,74.0,19.4,3.85,6.13,10.05,88.0,4.44,25278.0,27619.0,-55.3,2.93,75.85,7,1
+HOSP-TUR-02,Anatolia Care & Oncology Hub,Ankara,TUR,Turkey,Europe / Middle East,Tertiary,1,340,81.8,426,354,83.1,10.23,3.76,7.51,9.15,87.77,4.6,12282.0,14887.0,22.7,2.83,75.58,8,1
+HOSP-SWE-02,Vastra Specialist Hospital,Gothenburg,SWE,Sweden,Northern Europe (Nordic),Tertiary,1,380,85.6,129,40,31.0,36.99,3.6,6.98,8.53,88.37,4.03,23772.0,24688.0,-42.4,2.72,74.79,9,1
+HOSP-ARE-01,Al Noor Gulf Medical Center,Dubai,ARE,United Arab Emirates,Middle East (GCC),Quaternary,1,420,81.5,258,183,70.9,9.41,3.69,8.14,9.69,87.89,4.57,22623.0,24840.0,-50.4,2.83,74.18,10,2
+HOSP-DEU-02,Spree Valley Medical Center,Berlin,DEU,Germany,Western Europe,Tertiary,1,410,84.1,350,254,72.6,20.75,3.61,8.86,8.86,88.42,4.39,23259.0,25512.0,-61.7,2.73,73.57,11,2
+HOSP-USA-01,Atlantic Academic Medical Center,Boston,USA,United States,North America,Quaternary,1,740,89.4,282,79,28.0,27.56,3.76,7.8,12.41,87.39,4.18,46912.0,47803.0,-102.3,2.72,70.15,12,1
+HOSP-ARE-02,Emirates Horizon Specialist Hospital,Abu Dhabi,ARE,United Arab Emirates,Middle East (GCC),Tertiary,1,310,77.0,258,194,75.2,7.74,3.61,10.85,10.08,87.0,4.58,21823.0,24231.0,-55.3,2.8,70.13,13,3
+HOSP-USA-02,Pacific Precision Surgical Hospital,San Diego,USA,United States,North America,Tertiary,1,430,86.0,272,70,25.7,25.51,3.62,11.03,9.56,87.36,4.25,47800.0,48617.0,-89.2,2.79,69.23,14,2
+HOSP-IND-02,Deccan Cardiac & Transplant Center,Bengaluru,IND,India,South Asia,Quaternary,1,520,80.5,316,265,83.9,10.17,3.53,11.08,11.08,87.15,4.56,8886.0,11475.0,30.2,2.72,68.81,15,2
+HOSP-TUR-01,Bosphorus International Hospital,Istanbul,TUR,Turkey,Europe / Middle East,Quaternary,1,480,79.4,345,300,87.0,8.46,4.09,10.43,12.17,87.22,4.6,13847.0,16652.0,27.2,3.1,68.72,16,2
+HOSP-SWE-01,Nordic Heart & Ortho Clinic,Stockholm,SWE,Sweden,Northern Europe (Nordic),Quaternary,1,510,88.2,96,23,24.0,34.48,4.08,7.29,15.63,86.89,4.05,27682.0,28460.0,-38.3,2.9,66.87,17,2
+HOSP-THA-03,Andaman Wellness & Surgery Clinic,Phuket,THA,Thailand,Southeast Asia,Specialty Center,0,140,73.0,117,71,60.7,7.15,3.69,11.97,10.26,83.61,4.36,10726.0,12639.0,17.0,2.62,66.48,18,3
+HOSP-ARE-04,Sharjah Coastal General Hospital,Sharjah,ARE,United Arab Emirates,Middle East (GCC),Tertiary,0,260,86.4,153,72,47.1,15.38,3.75,10.46,13.07,84.66,4.06,18764.0,20229.0,-30.6,2.67,64.73,19,4
+HOSP-TUR-03,Aegean Surgical & Dental Center,Izmir,TUR,Turkey,Europe / Middle East,Specialty Center,0,165,84.9,157,106,67.5,12.96,4.2,12.1,13.38,83.82,4.25,11501.0,13652.0,26.8,2.99,62.83,20,3
+HOSP-DEU-03,Rhine Orthopedic Institute,Frankfurt,DEU,Germany,Western Europe,Specialty Center,0,190,80.3,202,100,49.5,18.71,4.11,14.36,16.34,83.18,4.06,20853.0,22427.0,-26.4,2.83,56.06,21,3
+HOSP-USA-03,Midwest Community General Hospital,Chicago,USA,United States,North America,Tertiary,0,360,91.2,234,26,11.1,28.84,3.88,15.38,14.1,83.64,3.77,40357.0,40712.0,-32.0,2.71,56.03,22,3
+HOSP-IND-03,Western Coast Multi-Specialty Hospital,Mumbai,IND,India,South Asia,Tertiary,0,390,89.1,132,86,65.2,15.65,4.14,16.67,15.91,82.81,4.14,8690.0,10828.0,29.5,2.96,53.8,23,3
+HOSP-SWE-03,Skane Regional Care Center,Malmo,SWE,Sweden,Northern Europe (Nordic),Tertiary,0,290,90.5,100,8,8.0,34.9,4.45,17.0,16.0,81.9,3.66,25693.0,25959.0,-11.8,3.06,51.05,24,3

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Global Healthcare Operations &amp; Medical Tourism BI Dashboard</title>
+<style>
+  :root {
+    --navy: #0F3D5E;
+    --teal: #0D9488;
+    --amber: #D97706;
+    --coral: #DC2626;
+    --bg: #F8FAFC;
+    --card: #FFFFFF;
+    --border: #E2E8F0;
+    --text: #1E293B;
+    --muted: #64748B;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+  header {
+    background: linear-gradient(135deg, #0F3D5E 0%, #0D5C75 100%);
+    color: #fff;
+    padding: 26px 32px;
+    border-bottom: 4px solid var(--teal);
+  }
+  header h1 { font-size: 1.55rem; font-weight: 700; letter-spacing: -0.02em; }
+  header p { color: #CBD5E1; font-size: 0.92rem; margin-top: 4px; }
+  .container { max-width: 1320px; margin: 0 auto; padding: 22px 24px 48px; }
+  .controls {
+    display: flex; flex-wrap: wrap; gap: 14px; align-items: end;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 18px; margin-bottom: 20px;
+  }
+  .control-group { display: flex; flex-direction: column; gap: 4px; min-width: 180px; }
+  .control-group label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--muted); }
+  .control-group select {
+    padding: 7px 10px; border: 1px solid #CBD5E1; border-radius: 6px;
+    font-size: 0.9rem; background: #fff; color: var(--text);
+  }
+  .kpi-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+    gap: 14px; margin-bottom: 22px;
+  }
+  .kpi-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-left: 4px solid var(--teal); border-radius: 10px; padding: 16px 18px;
+  }
+  .kpi-label { font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: var(--muted); }
+  .kpi-value { font-size: 1.65rem; font-weight: 800; color: var(--navy); margin-top: 4px; }
+  .kpi-sub { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+  .grid-2 { display: grid; grid-template-columns: 1.25fr 1fr; gap: 18px; margin-bottom: 22px; }
+  @media (max-width: 960px) { .grid-2 { grid-template-columns: 1fr; } }
+  .panel {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 20px; margin-bottom: 20px;
+  }
+  .panel h2 { font-size: 1.05rem; color: var(--navy); margin-bottom: 4px; }
+  .panel .sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  th {
+    text-align: left; font-size: 0.75rem; text-transform: uppercase; color: var(--muted);
+    border-bottom: 2px solid var(--border); padding: 9px 10px; background: #F8FAFC;
+  }
+  td { padding: 9px 10px; border-bottom: 1px solid var(--border); }
+  tr:hover td { background: #F1F5F9; }
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    font-size: 0.74rem; font-weight: 700;
+  }
+  .badge-jci { background: #CCFBF1; color: #0F766E; }
+  .badge-non { background: #FEE2E2; color: #B91C1C; }
+  .bar-wrap { width: 100px; background: #E2E8F0; border-radius: 4px; height: 8px; display: inline-block; vertical-align: middle; margin-right: 6px; }
+  .bar-fill { height: 100%; border-radius: 4px; background: var(--teal); }
+  .stat-pill {
+    display: inline-block; background: #EFF6FF; border: 1px solid #BFDBFE;
+    color: #1E40AF; border-radius: 6px; padding: 6px 10px; font-size: 0.82rem; margin: 4px 6px 4px 0;
+  }
+  .table-scroll { overflow-x: auto; }
+  footer { text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 28px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Global Healthcare Operations &amp; Medical Tourism BI Dashboard</h1>
+  <p>SQLite Star Schema (6,000 Clean Encounters, 24 Partner Hospitals) + Live World Bank Open Data Benchmarks &bull; Author: Subhi Alloush</p>
+</header>
+
+<div class="container">
+  <div class="controls">
+    <div class="control-group">
+      <label for="fCountry">Destination Country</label>
+      <select id="fCountry"><option value="ALL">All 8 Countries</option></select>
+    </div>
+    <div class="control-group">
+      <label for="fJci">JCI Accreditation</label>
+      <select id="fJci">
+        <option value="ALL">All Hospitals</option>
+        <option value="1">JCI Accredited Only</option>
+        <option value="0">Non-JCI Only</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label for="fTier">Hospital Tier</label>
+      <select id="fTier">
+        <option value="ALL">All Tiers</option>
+        <option value="Quaternary">Quaternary</option>
+        <option value="Tertiary">Tertiary</option>
+        <option value="Specialty Center">Specialty Center</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="kpi-grid" id="kpiGrid"></div>
+
+  <div class="grid-2">
+    <div class="panel">
+      <h2>Value-Based Care Quadrant (Quality Score vs. Avg Procedure Cost)</h2>
+      <div class="sub">Hover any hospital bubble to inspect quality rank, cost, and readmission rate. Teal = JCI Accredited, Coral = Non-JCI.</div>
+      <svg id="quadrantSvg" viewBox="0 0 640 340" style="width:100%;height:auto;"></svg>
+    </div>
+    <div class="panel">
+      <h2>Inferential Statistics Highlights</h2>
+      <div class="sub">Key validated findings from Python &amp; SciPy statistical testing (n = 6,000 encounters).</div>
+      <div id="statsBox"></div>
+      <h2 style="margin-top:16px;">Top Cross-Border Corridors</h2>
+      <div class="sub">Highest-volume international patient flows and average net cost savings.</div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Origin &rarr; Destination</th><th>Cases</th><th>Avg Total</th><th>Net Savings</th></tr></thead>
+          <tbody id="corridorBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Partner Hospital Performance Scorecard</h2>
+    <div class="sub">Filtered dynamically by Country, JCI Accreditation, and Tier. Composite Quality combines clinical outcomes (35%), low readmissions (25%), low complications (20%), and satisfaction (20%).</div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th><th>Hospital</th><th>Country</th><th>Tier</th><th>JCI</th>
+            <th>Encounters</th><th>Avg Cost</th><th>Wait (d)</th><th>Readm %</th><th>Sat (1-5)</th><th>Quality Score</th>
+          </tr>
+        </thead>
+        <tbody id="hospBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Real-World Macro Health Benchmarks (World Bank Open Data API)</h2>
+    <div class="sub">Official World Bank indicators joined to partner hospital network metrics (latest available non-null observation, 2015–2024).</div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Country</th><th>Health System</th><th>Health Spend/Capita</th><th>Out-of-Pocket %</th>
+            <th>Beds / 1,000</th><th>Life Expectancy</th><th>Partner Avg Cost</th><th>Partner Readm %</th>
+          </tr>
+        </thead>
+        <tbody id="macroBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    Global Healthcare Operations &amp; Medical Tourism Analytics &bull; HIPAA/GDPR-Safe Synthetic Clinical Operations + Official World Bank Open Data API v2
+  </footer>
+</div>
+
+<script>
+const DATA = {"hospitals": [{"hospital_id": "HOSP-THA-01", "hospital_name": "Siam International Medical Center", "city": "Bangkok", "country_code": "THA", "country_name": "Thailand", "region": "Southeast Asia", "hospital_tier": "Quaternary", "jci_accredited": 1, "licensed_beds": 530, "avg_bed_occupancy_pct": 76.5, "total_encounters": 317, "intl_encounters": 275, "intl_patient_share_pct": 86.8, "avg_wait_days": 6.78, "avg_los_days": 3.85, "readmission_rate_pct": 5.68, "complication_rate_pct": 5.99, "avg_clinical_outcome": 88.02, "avg_satisfaction": 4.67, "avg_procedure_cost_usd": 14698.0, "avg_total_cost_usd": 17463.0, "avg_savings_pct": 12.1, "avg_case_complexity": 2.91, "composite_quality_score": 81.4, "quality_rank": 1, "country_rank": 1}, {"hospital_id": "HOSP-SGP-02", "hospital_name": "Marina Oncology & Diagnostics Center", "city": "Singapore", "country_code": "SGP", "country_name": "Singapore", "region": "Southeast Asia", "hospital_tier": "Specialty Center", "jci_accredited": 1, "licensed_beds": 210, "avg_bed_occupancy_pct": 79.0, "total_encounters": 245, "intl_encounters": 154, "intl_patient_share_pct": 62.9, "avg_wait_days": 9.96, "avg_los_days": 3.79, "readmission_rate_pct": 5.71, "complication_rate_pct": 6.53, "avg_clinical_outcome": 87.9, "avg_satisfaction": 4.62, "avg_procedure_cost_usd": 27839.0, "avg_total_cost_usd": 29771.0, "avg_savings_pct": -76.1, "avg_case_complexity": 2.91, "composite_quality_score": 80.58, "quality_rank": 2, "country_rank": 1}, {"hospital_id": "HOSP-THA-02", "hospital_name": "Chao Phraya Heart & Spine Hospital", "city": "Bangkok", "country_code": "THA", "country_name": "Thailand", "region": "Southeast Asia", "hospital_tier": "Tertiary", "jci_accredited": 1, "licensed_beds": 320, "avg_bed_occupancy_pct": 78.2, "total_encounters": 343, "intl_encounters": 289, "intl_patient_share_pct": 84.3, "avg_wait_days": 6.96, "avg_los_days": 3.53, "readmission_rate_pct": 7.0, "complication_rate_pct": 7.0, "avg_clinical_outcome": 88.1, "avg_satisfaction": 4.64, "avg_procedure_cost_usd": 13645.0, "avg_total_cost_usd": 16273.0, "avg_savings_pct": 15.7, "avg_case_complexity": 2.78, "composite_quality_score": 78.64, "quality_rank": 3, "country_rank": 2}, {"hospital_id": "HOSP-ARE-03", "hospital_name": "Jumeirah Surgical Institute", "city": "Dubai", "country_code": "ARE", "country_name": "United Arab Emirates", "region": "Middle East (GCC)", "hospital_tier": "Specialty Center", "jci_accredited": 1, "licensed_beds": 145, "avg_bed_occupancy_pct": 74.2, "total_encounters": 282, "intl_encounters": 201, "intl_patient_share_pct": 71.3, "avg_wait_days": 7.78, "avg_los_days": 3.88, "readmission_rate_pct": 5.67, "complication_rate_pct": 8.87, "avg_clinical_outcome": 87.46, "avg_satisfaction": 4.63, "avg_procedure_cost_usd": 23351.0, "avg_total_cost_usd": 25666.0, "avg_savings_pct": -46.1, "avg_case_complexity": 2.94, "composite_quality_score": 78.17, "quality_rank": 4, "country_rank": 1}, {"hospital_id": "HOSP-IND-01", "hospital_name": "Indraprastha Apex Health Institute", "city": "New Delhi", "country_code": "IND", "country_name": "India", "region": "South Asia", "hospital_tier": "Quaternary", "jci_accredited": 1, "licensed_beds": 680, "avg_bed_occupancy_pct": 83.7, "total_encounters": 299, "intl_encounters": 238, "intl_patient_share_pct": 79.6, "avg_wait_days": 11.89, "avg_los_days": 3.39, "readmission_rate_pct": 6.02, "complication_rate_pct": 8.7, "avg_clinical_outcome": 87.89, "avg_satisfaction": 4.55, "avg_procedure_cost_usd": 8628.0, "avg_total_cost_usd": 11120.0, "avg_savings_pct": 27.4, "avg_case_complexity": 2.7, "composite_quality_score": 77.74, "quality_rank": 5, "country_rank": 1}, {"hospital_id": "HOSP-SGP-01", "hospital_name": "Pacific Rim Quaternary Medical Hub", "city": "Singapore", "country_code": "SGP", "country_name": "Singapore", "region": "Southeast Asia", "hospital_tier": "Quaternary", "jci_accredited": 1, "licensed_beds": 490, "avg_bed_occupancy_pct": 83.2, "total_encounters": 279, "intl_encounters": 179, "intl_patient_share_pct": 64.2, "avg_wait_days": 13.72, "avg_los_days": 3.63, "readmission_rate_pct": 5.38, "complication_rate_pct": 10.75, "avg_clinical_outcome": 87.85, "avg_satisfaction": 4.52, "avg_procedure_cost_usd": 26987.0, "avg_total_cost_usd": 28964.0, "avg_savings_pct": -75.1, "avg_case_complexity": 2.83, "composite_quality_score": 76.35, "quality_rank": 6, "country_rank": 2}, {"hospital_id": "HOSP-DEU-01", "hospital_name": "Bavaria International Klinikum", "city": "Munich", "country_code": "DEU", "country_name": "Germany", "region": "Western Europe", "hospital_tier": "Quaternary", "jci_accredited": 1, "licensed_beds": 560, "avg_bed_occupancy_pct": 82.0, "total_encounters": 408, "intl_encounters": 302, "intl_patient_share_pct": 74.0, "avg_wait_days": 19.4, "avg_los_days": 3.85, "readmission_rate_pct": 6.13, "complication_rate_pct": 10.05, "avg_clinical_outcome": 88.0, "avg_satisfaction": 4.44, "avg_procedure_cost_usd": 25278.0, "avg_total_cost_usd": 27619.0, "avg_savings_pct": -55.3, "avg_case_complexity": 2.93, "composite_quality_score": 75.85, "quality_rank": 7, "country_rank": 1}, {"hospital_id": "HOSP-TUR-02", "hospital_name": "Anatolia Care & Oncology Hub", "city": "Ankara", "country_code": "TUR", "country_name": "Turkey", "region": "Europe / Middle East", "hospital_tier": "Tertiary", "jci_accredited": 1, "licensed_beds": 340, "avg_bed_occupancy_pct": 81.8, "total_encounters": 426, "intl_encounters": 354, "intl_patient_share_pct": 83.1, "avg_wait_days": 10.23, "avg_los_days": 3.76, "readmission_rate_pct": 7.51, "complication_rate_pct": 9.15, "avg_clinical_outcome": 87.77, "avg_satisfaction": 4.6, "avg_procedure_cost_usd": 12282.0, "avg_total_cost_usd": 14887.0, "avg_savings_pct": 22.7, "avg_case_complexity": 2.83, "composite_quality_score": 75.58, "quality_rank": 8, "country_rank": 1}, {"hospital_id": "HOSP-SWE-02", "hospital_name": "Vastra Specialist Hospital", "city": "Gothenburg", "country_code": "SWE", "country_name": "Sweden", "region": "Northern Europe (Nordic)", "hospital_tier": "Tertiary", "jci_accredited": 1, "licensed_beds": 380, "avg_bed_occupancy_pct": 85.6, "total_encounters": 129, "intl_encounters": 40, "intl_patient_share_pct": 31.0, "avg_wait_days": 36.99, "avg_los_days": 3.6, "readmission_rate_pct": 6.98, "complication_rate_pct": 8.53, "avg_clinical_outcome": 88.37, "avg_satisfaction": 4.03, "avg_procedure_cost_usd": 23772.0, "avg_total_cost_usd": 24688.0, "avg_savings_pct": -42.4, "avg_case_complexity": 2.72, "composite_quality_score": 74.79, "quality_rank": 9, "country_rank": 1}, {"hospital_id": "HOSP-ARE-01", "hospital_name": "Al Noor Gulf Medical Center", "city": "Dubai", "country_code": "ARE", "country_name": "United Arab Emirates", "region": "Middle East (GCC)", "hospital_tier": "Quaternary", "jci_accredited": 1, "licensed_beds": 420, "avg_bed_occupancy_pct": 81.5, "total_encounters": 258, "intl_encounters": 183, "intl_patient_share_pct": 70.9, "avg_wait_days": 9.41, "avg_los_days": 3.69, "readmission_rate_pct": 8.14, "complication_rate_pct": 9.69, "avg_clinical_outcome": 87.89, "avg_satisfaction": 4.57, "avg_procedure_cost_usd": 22623.0, "avg_total_cost_usd": 24840.0, "avg_savings_pct": -50.4, "avg_case_complexity": 2.83, "composite_quality_score": 74.18, "quality_rank": 10, "country_rank": 2}, {"hospital_id": "HOSP-DEU-02", "hospital_name": "Spree Valley Medical Center", "city": "Berlin", "country_code": "DEU", "country_name": "Germany", "region": "Western Europe", "hospital_tier": "Tertiary", "jci_accredited": 1, "licensed_beds": 410, "avg_bed_occupancy_pct": 84.1, "total_encounters": 350, "intl_encounters": 254, "intl_patient_share_pct": 72.6, "avg_wait_days": 20.75, "avg_los_days": 3.61, "readmission_rate_pct": 8.86, "complication_rate_pct": 8.86, "avg_clinical_outcome": 88.42, "avg_satisfaction": 4.39, "avg_procedure_cost_usd": 23259.0, "avg_total_cost_usd": 25512.0, "avg_savings_pct": -61.7, "avg_case_complexity": 2.73, "composite_quality_score": 73.57, "quality_rank": 11, "country_rank": 2}, {"hospital_id": "HOSP-USA-01", "hospital_name": "Atlantic Academic Medical Center", "city": "Boston", "country_code": "USA", "country_name": "United States", "region": "North America", "hospital_tier": "Quaternary", "jci_accredited": 1, "licensed_beds": 740, "avg_bed_occupancy_pct": 89.4, "total_encounters": 282, "intl_encounters": 79, "intl_patient_share_pct": 28.0, "avg_wait_days": 27.56, "avg_los_days": 3.76, "readmission_rate_pct": 7.8, "complication_rate_pct": 12.41, "avg_clinical_outcome": 87.39, "avg_satisfaction": 4.18, "avg_procedure_cost_usd": 46912.0, "avg_total_cost_usd": 47803.0, "avg_savings_pct": -102.3, "avg_case_complexity": 2.72, "composite_quality_score": 70.15, "quality_rank": 12, "country_rank": 1}, {"hospital_id": "HOSP-ARE-02", "hospital_name": "Emirates Horizon Specialist Hospital", "city": "Abu Dhabi", "country_code": "ARE", "country_name": "United Arab Emirates", "region": "Middle East (GCC)", "hospital_tier": "Tertiary", "jci_accredited": 1, "licensed_beds": 310, "avg_bed_occupancy_pct": 77.0, "total_encounters": 258, "intl_encounters": 194, "intl_patient_share_pct": 75.2, "avg_wait_days": 7.74, "avg_los_days": 3.61, "readmission_rate_pct": 10.85, "complication_rate_pct": 10.08, "avg_clinical_outcome": 87.0, "avg_satisfaction": 4.58, "avg_procedure_cost_usd": 21823.0, "avg_total_cost_usd": 24231.0, "avg_savings_pct": -55.3, "avg_case_complexity": 2.8, "composite_quality_score": 70.13, "quality_rank": 13, "country_rank": 3}, {"hospital_id": "HOSP-USA-02", "hospital_name": "Pacific Precision Surgical Hospital", "city": "San Diego", "country_code": "USA", "country_name": "United States", "region": "North America", "hospital_tier": "Tertiary", "jci_accredited": 1, "licensed_beds": 430, "avg_bed_occupancy_pct": 86.0, "total_encounters": 272, "intl_encounters": 70, "intl_patient_share_pct": 25.7, "avg_wait_days": 25.51, "avg_los_days": 3.62, "readmission_rate_pct": 11.03, "complication_rate_pct": 9.56, "avg_clinical_outcome": 87.36, "avg_satisfaction": 4.25, "avg_procedure_cost_usd": 47800.0, "avg_total_cost_usd": 48617.0, "avg_savings_pct": -89.2, "avg_case_complexity": 2.79, "composite_quality_score": 69.23, "quality_rank": 14, "country_rank": 2}, {"hospital_id": "HOSP-IND-02", "hospital_name": "Deccan Cardiac & Transplant Center", "city": "Bengaluru", "country_code": "IND", "country_name": "India", "region": "South Asia", "hospital_tier": "Quaternary", "jci_accredited": 1, "licensed_beds": 520, "avg_bed_occupancy_pct": 80.5, "total_encounters": 316, "intl_encounters": 265, "intl_patient_share_pct": 83.9, "avg_wait_days": 10.17, "avg_los_days": 3.53, "readmission_rate_pct": 11.08, "complication_rate_pct": 11.08, "avg_clinical_outcome": 87.15, "avg_satisfaction": 4.56, "avg_procedure_cost_usd": 8886.0, "avg_total_cost_usd": 11475.0, "avg_savings_pct": 30.2, "avg_case_complexity": 2.72, "composite_quality_score": 68.81, "quality_rank": 15, "country_rank": 2}, {"hospital_id": "HOSP-TUR-01", "hospital_name": "Bosphorus International Hospital", "city": "Istanbul", "country_code": "TUR", "country_name": "Turkey", "region": "Europe / Middle East", "hospital_tier": "Quaternary", "jci_accredited": 1, "licensed_beds": 480, "avg_bed_occupancy_pct": 79.4, "total_encounters": 345, "intl_encounters": 300, "intl_patient_share_pct": 87.0, "avg_wait_days": 8.46, "avg_los_days": 4.09, "readmission_rate_pct": 10.43, "complication_rate_pct": 12.17, "avg_clinical_outcome": 87.22, "avg_satisfaction": 4.6, "avg_procedure_cost_usd": 13847.0, "avg_total_cost_usd": 16652.0, "avg_savings_pct": 27.2, "avg_case_complexity": 3.1, "composite_quality_score": 68.72, "quality_rank": 16, "country_rank": 2}, {"hospital_id": "HOSP-SWE-01", "hospital_name": "Nordic Heart & Ortho Clinic", "city": "Stockholm", "country_code": "SWE", "country_name": "Sweden", "region": "Northern Europe (Nordic)", "hospital_tier": "Quaternary", "jci_accredited": 1, "licensed_beds": 510, "avg_bed_occupancy_pct": 88.2, "total_encounters": 96, "intl_encounters": 23, "intl_patient_share_pct": 24.0, "avg_wait_days": 34.48, "avg_los_days": 4.08, "readmission_rate_pct": 7.29, "complication_rate_pct": 15.63, "avg_clinical_outcome": 86.89, "avg_satisfaction": 4.05, "avg_procedure_cost_usd": 27682.0, "avg_total_cost_usd": 28460.0, "avg_savings_pct": -38.3, "avg_case_complexity": 2.9, "composite_quality_score": 66.87, "quality_rank": 17, "country_rank": 2}, {"hospital_id": "HOSP-THA-03", "hospital_name": "Andaman Wellness & Surgery Clinic", "city": "Phuket", "country_code": "THA", "country_name": "Thailand", "region": "Southeast Asia", "hospital_tier": "Specialty Center", "jci_accredited": 0, "licensed_beds": 140, "avg_bed_occupancy_pct": 73.0, "total_encounters": 117, "intl_encounters": 71, "intl_patient_share_pct": 60.7, "avg_wait_days": 7.15, "avg_los_days": 3.69, "readmission_rate_pct": 11.97, "complication_rate_pct": 10.26, "avg_clinical_outcome": 83.61, "avg_satisfaction": 4.36, "avg_procedure_cost_usd": 10726.0, "avg_total_cost_usd": 12639.0, "avg_savings_pct": 17.0, "avg_case_complexity": 2.62, "composite_quality_score": 66.48, "quality_rank": 18, "country_rank": 3}, {"hospital_id": "HOSP-ARE-04", "hospital_name": "Sharjah Coastal General Hospital", "city": "Sharjah", "country_code": "ARE", "country_name": "United Arab Emirates", "region": "Middle East (GCC)", "hospital_tier": "Tertiary", "jci_accredited": 0, "licensed_beds": 260, "avg_bed_occupancy_pct": 86.4, "total_encounters": 153, "intl_encounters": 72, "intl_patient_share_pct": 47.1, "avg_wait_days": 15.38, "avg_los_days": 3.75, "readmission_rate_pct": 10.46, "complication_rate_pct": 13.07, "avg_clinical_outcome": 84.66, "avg_satisfaction": 4.06, "avg_procedure_cost_usd": 18764.0, "avg_total_cost_usd": 20229.0, "avg_savings_pct": -30.6, "avg_case_complexity": 2.67, "composite_quality_score": 64.73, "quality_rank": 19, "country_rank": 4}, {"hospital_id": "HOSP-TUR-03", "hospital_name": "Aegean Surgical & Dental Center", "city": "Izmir", "country_code": "TUR", "country_name": "Turkey", "region": "Europe / Middle East", "hospital_tier": "Specialty Center", "jci_accredited": 0, "licensed_beds": 165, "avg_bed_occupancy_pct": 84.9, "total_encounters": 157, "intl_encounters": 106, "intl_patient_share_pct": 67.5, "avg_wait_days": 12.96, "avg_los_days": 4.2, "readmission_rate_pct": 12.1, "complication_rate_pct": 13.38, "avg_clinical_outcome": 83.82, "avg_satisfaction": 4.25, "avg_procedure_cost_usd": 11501.0, "avg_total_cost_usd": 13652.0, "avg_savings_pct": 26.8, "avg_case_complexity": 2.99, "composite_quality_score": 62.83, "quality_rank": 20, "country_rank": 3}, {"hospital_id": "HOSP-DEU-03", "hospital_name": "Rhine Orthopedic Institute", "city": "Frankfurt", "country_code": "DEU", "country_name": "Germany", "region": "Western Europe", "hospital_tier": "Specialty Center", "jci_accredited": 0, "licensed_beds": 190, "avg_bed_occupancy_pct": 80.3, "total_encounters": 202, "intl_encounters": 100, "intl_patient_share_pct": 49.5, "avg_wait_days": 18.71, "avg_los_days": 4.11, "readmission_rate_pct": 14.36, "complication_rate_pct": 16.34, "avg_clinical_outcome": 83.18, "avg_satisfaction": 4.06, "avg_procedure_cost_usd": 20853.0, "avg_total_cost_usd": 22427.0, "avg_savings_pct": -26.4, "avg_case_complexity": 2.83, "composite_quality_score": 56.06, "quality_rank": 21, "country_rank": 3}, {"hospital_id": "HOSP-USA-03", "hospital_name": "Midwest Community General Hospital", "city": "Chicago", "country_code": "USA", "country_name": "United States", "region": "North America", "hospital_tier": "Tertiary", "jci_accredited": 0, "licensed_beds": 360, "avg_bed_occupancy_pct": 91.2, "total_encounters": 234, "intl_encounters": 26, "intl_patient_share_pct": 11.1, "avg_wait_days": 28.84, "avg_los_days": 3.88, "readmission_rate_pct": 15.38, "complication_rate_pct": 14.1, "avg_clinical_outcome": 83.64, "avg_satisfaction": 3.77, "avg_procedure_cost_usd": 40357.0, "avg_total_cost_usd": 40712.0, "avg_savings_pct": -32.0, "avg_case_complexity": 2.71, "composite_quality_score": 56.03, "quality_rank": 22, "country_rank": 3}, {"hospital_id": "HOSP-IND-03", "hospital_name": "Western Coast Multi-Specialty Hospital", "city": "Mumbai", "country_code": "IND", "country_name": "India", "region": "South Asia", "hospital_tier": "Tertiary", "jci_accredited": 0, "licensed_beds": 390, "avg_bed_occupancy_pct": 89.1, "total_encounters": 132, "intl_encounters": 86, "intl_patient_share_pct": 65.2, "avg_wait_days": 15.65, "avg_los_days": 4.14, "readmission_rate_pct": 16.67, "complication_rate_pct": 15.91, "avg_clinical_outcome": 82.81, "avg_satisfaction": 4.14, "avg_procedure_cost_usd": 8690.0, "avg_total_cost_usd": 10828.0, "avg_savings_pct": 29.5, "avg_case_complexity": 2.96, "composite_quality_score": 53.8, "quality_rank": 23, "country_rank": 3}, {"hospital_id": "HOSP-SWE-03", "hospital_name": "Skane Regional Care Center", "city": "Malmo", "country_code": "SWE", "country_name": "Sweden", "region": "Northern Europe (Nordic)", "hospital_tier": "Tertiary", "jci_accredited": 0, "licensed_beds": 290, "avg_bed_occupancy_pct": 90.5, "total_encounters": 100, "intl_encounters": 8, "intl_patient_share_pct": 8.0, "avg_wait_days": 34.9, "avg_los_days": 4.45, "readmission_rate_pct": 17.0, "complication_rate_pct": 16.0, "avg_clinical_outcome": 81.9, "avg_satisfaction": 3.66, "avg_procedure_cost_usd": 25693.0, "avg_total_cost_usd": 25959.0, "avg_savings_pct": -11.8, "avg_case_complexity": 3.06, "composite_quality_score": 51.05, "quality_rank": 24, "country_rank": 3}], "corridors": [{"origin_country_code": "USA", "origin_country": "United States", "destination_country_code": "THA", "destination_country": "Thailand", "encounter_volume": 263, "avg_home_cost_usd": 39428.0, "avg_destination_total_usd": 15754.0, "avg_net_savings_usd": 23674.0, "avg_net_savings_pct": 52.6, "avg_wait_days": 6.0, "readmission_rate_pct": 6.46, "avg_satisfaction": 4.66}, {"origin_country_code": "USA", "origin_country": "United States", "destination_country_code": "TUR", "destination_country": "Turkey", "encounter_volume": 258, "avg_home_cost_usd": 45671.0, "avg_destination_total_usd": 15966.0, "avg_net_savings_usd": 29705.0, "avg_net_savings_pct": 58.9, "avg_wait_days": 9.6, "readmission_rate_pct": 10.85, "avg_satisfaction": 4.56}, {"origin_country_code": "USA", "origin_country": "United States", "destination_country_code": "IND", "destination_country": "India", "encounter_volume": 237, "avg_home_cost_usd": 39560.0, "avg_destination_total_usd": 11421.0, "avg_net_savings_usd": 28139.0, "avg_net_savings_pct": 63.3, "avg_wait_days": 11.2, "readmission_rate_pct": 5.91, "avg_satisfaction": 4.57}, {"origin_country_code": "DEU", "origin_country": "Germany", "destination_country_code": "TUR", "destination_country": "Turkey", "encounter_volume": 184, "avg_home_cost_usd": 22798.0, "avg_destination_total_usd": 16065.0, "avg_net_savings_usd": 6733.0, "avg_net_savings_pct": 23.9, "avg_wait_days": 9.4, "readmission_rate_pct": 9.24, "avg_satisfaction": 4.6}, {"origin_country_code": "SWE", "origin_country": "Sweden", "destination_country_code": "TUR", "destination_country": "Turkey", "encounter_volume": 175, "avg_home_cost_usd": 20753.0, "avg_destination_total_usd": 14778.0, "avg_net_savings_usd": 5976.0, "avg_net_savings_pct": 22.2, "avg_wait_days": 9.8, "readmission_rate_pct": 7.43, "avg_satisfaction": 4.59}, {"origin_country_code": "ARE", "origin_country": "United Arab Emirates", "destination_country_code": "DEU", "destination_country": "Germany", "encounter_volume": 161, "avg_home_cost_usd": 17941.0, "avg_destination_total_usd": 25799.0, "avg_net_savings_usd": -7858.0, "avg_net_savings_pct": -49.8, "avg_wait_days": 20.4, "readmission_rate_pct": 6.83, "avg_satisfaction": 4.45}, {"origin_country_code": "SWE", "origin_country": "Sweden", "destination_country_code": "DEU", "destination_country": "Germany", "encounter_volume": 160, "avg_home_cost_usd": 21286.0, "avg_destination_total_usd": 27180.0, "avg_net_savings_usd": -5893.0, "avg_net_savings_pct": -31.0, "avg_wait_days": 19.4, "readmission_rate_pct": 8.13, "avg_satisfaction": 4.39}, {"origin_country_code": "DEU", "origin_country": "Germany", "destination_country_code": "ARE", "destination_country": "United Arab Emirates", "encounter_volume": 151, "avg_home_cost_usd": 22797.0, "avg_destination_total_usd": 27481.0, "avg_net_savings_usd": -4684.0, "avg_net_savings_pct": -23.5, "avg_wait_days": 9.1, "readmission_rate_pct": 7.95, "avg_satisfaction": 4.57}, {"origin_country_code": "ARE", "origin_country": "United Arab Emirates", "destination_country_code": "IND", "destination_country": "India", "encounter_volume": 128, "avg_home_cost_usd": 19738.0, "avg_destination_total_usd": 12887.0, "avg_net_savings_usd": 6850.0, "avg_net_savings_pct": 22.1, "avg_wait_days": 11.5, "readmission_rate_pct": 13.28, "avg_satisfaction": 4.44}, {"origin_country_code": "USA", "origin_country": "United States", "destination_country_code": "ARE", "destination_country": "United Arab Emirates", "encounter_volume": 127, "avg_home_cost_usd": 42769.0, "avg_destination_total_usd": 25227.0, "avg_net_savings_usd": 17541.0, "avg_net_savings_pct": 35.3, "avg_wait_days": 8.5, "readmission_rate_pct": 7.87, "avg_satisfaction": 4.57}, {"origin_country_code": "ARE", "origin_country": "United Arab Emirates", "destination_country_code": "THA", "destination_country": "Thailand", "encounter_volume": 111, "avg_home_cost_usd": 18287.0, "avg_destination_total_usd": 16482.0, "avg_net_savings_usd": 1806.0, "avg_net_savings_pct": -3.2, "avg_wait_days": 6.8, "readmission_rate_pct": 7.21, "avg_satisfaction": 4.65}, {"origin_country_code": "SWE", "origin_country": "Sweden", "destination_country_code": "ARE", "destination_country": "United Arab Emirates", "encounter_volume": 110, "avg_home_cost_usd": 23065.0, "avg_destination_total_usd": 26233.0, "avg_net_savings_usd": -3168.0, "avg_net_savings_pct": -22.5, "avg_wait_days": 8.0, "readmission_rate_pct": 10.91, "avg_satisfaction": 4.56}, {"origin_country_code": "TUR", "origin_country": "Turkey", "destination_country_code": "DEU", "destination_country": "Germany", "encounter_volume": 95, "avg_home_cost_usd": 10022.0, "avg_destination_total_usd": 24918.0, "avg_net_savings_usd": -14896.0, "avg_net_savings_pct": -178.2, "avg_wait_days": 17.8, "readmission_rate_pct": 6.32, "avg_satisfaction": 4.41}, {"origin_country_code": "SGP", "origin_country": "Singapore", "destination_country_code": "THA", "destination_country": "Thailand", "encounter_volume": 90, "avg_home_cost_usd": 23908.0, "avg_destination_total_usd": 16988.0, "avg_net_savings_usd": 6920.0, "avg_net_savings_pct": 15.6, "avg_wait_days": 6.1, "readmission_rate_pct": 7.78, "avg_satisfaction": 4.64}, {"origin_country_code": "USA", "origin_country": "United States", "destination_country_code": "SGP", "destination_country": "Singapore", "encounter_volume": 90, "avg_home_cost_usd": 39992.0, "avg_destination_total_usd": 28030.0, "avg_net_savings_usd": 11962.0, "avg_net_savings_pct": 24.1, "avg_wait_days": 10.2, "readmission_rate_pct": 4.44, "avg_satisfaction": 4.6}, {"origin_country_code": "DEU", "origin_country": "Germany", "destination_country_code": "THA", "destination_country": "Thailand", "encounter_volume": 88, "avg_home_cost_usd": 23311.0, "avg_destination_total_usd": 18803.0, "avg_net_savings_usd": 4508.0, "avg_net_savings_pct": 14.0, "avg_wait_days": 6.9, "readmission_rate_pct": 9.09, "avg_satisfaction": 4.64}, {"origin_country_code": "ARE", "origin_country": "United Arab Emirates", "destination_country_code": "TUR", "destination_country": "Turkey", "encounter_volume": 87, "avg_home_cost_usd": 20251.0, "avg_destination_total_usd": 16301.0, "avg_net_savings_usd": 3949.0, "avg_net_savings_pct": 12.6, "avg_wait_days": 10.1, "readmission_rate_pct": 4.6, "avg_satisfaction": 4.62}, {"origin_country_code": "USA", "origin_country": "United States", "destination_country_code": "DEU", "destination_country": "Germany", "encounter_volume": 84, "avg_home_cost_usd": 42612.0, "avg_destination_total_usd": 26147.0, "avg_net_savings_usd": 16465.0, "avg_net_savings_pct": 33.2, "avg_wait_days": 16.0, "readmission_rate_pct": 4.76, "avg_satisfaction": 4.52}, {"origin_country_code": "TUR", "origin_country": "Turkey", "destination_country_code": "ARE", "destination_country": "United Arab Emirates", "encounter_volume": 82, "avg_home_cost_usd": 10054.0, "avg_destination_total_usd": 23286.0, "avg_net_savings_usd": -13232.0, "avg_net_savings_pct": -166.2, "avg_wait_days": 8.5, "readmission_rate_pct": 12.2, "avg_satisfaction": 4.56}, {"origin_country_code": "SGP", "origin_country": "Singapore", "destination_country_code": "IND", "destination_country": "India", "encounter_volume": 80, "avg_home_cost_usd": 19949.0, "avg_destination_total_usd": 10757.0, "avg_net_savings_usd": 9193.0, "avg_net_savings_pct": 28.5, "avg_wait_days": 10.2, "readmission_rate_pct": 15.0, "avg_satisfaction": 4.53}], "monthly": [{"admission_month": "2023-01", "total_encounters": 141, "medical_tourist_encounters": 91, "intl_share_pct": 64.5, "prev_month_encounters": NaN, "mom_volume_growth_pct": NaN, "avg_wait_days": 15.13, "avg_los_days": 3.76, "readmission_rate_pct": 9.93, "rolling_3m_readmission_pct": 9.93, "complication_rate_pct": 12.77, "avg_satisfaction": 4.36, "gross_episode_revenue_usd": 3475077.0}, {"admission_month": "2023-02", "total_encounters": 148, "medical_tourist_encounters": 92, "intl_share_pct": 62.2, "prev_month_encounters": 141.0, "mom_volume_growth_pct": 5.0, "avg_wait_days": 16.2, "avg_los_days": 3.95, "readmission_rate_pct": 8.11, "rolling_3m_readmission_pct": 9.02, "complication_rate_pct": 10.14, "avg_satisfaction": 4.39, "gross_episode_revenue_usd": 3792023.0}, {"admission_month": "2023-03", "total_encounters": 185, "medical_tourist_encounters": 121, "intl_share_pct": 65.4, "prev_month_encounters": 148.0, "mom_volume_growth_pct": 25.0, "avg_wait_days": 15.11, "avg_los_days": 3.78, "readmission_rate_pct": 8.11, "rolling_3m_readmission_pct": 8.72, "complication_rate_pct": 11.89, "avg_satisfaction": 4.4, "gross_episode_revenue_usd": 4416986.0}, {"admission_month": "2023-04", "total_encounters": 156, "medical_tourist_encounters": 90, "intl_share_pct": 57.7, "prev_month_encounters": 185.0, "mom_volume_growth_pct": -15.7, "avg_wait_days": 13.47, "avg_los_days": 4.01, "readmission_rate_pct": 8.33, "rolling_3m_readmission_pct": 8.18, "complication_rate_pct": 13.46, "avg_satisfaction": 4.43, "gross_episode_revenue_usd": 3987204.0}, {"admission_month": "2023-05", "total_encounters": 143, "medical_tourist_encounters": 89, "intl_share_pct": 62.2, "prev_month_encounters": 156.0, "mom_volume_growth_pct": -8.3, "avg_wait_days": 15.0, "avg_los_days": 3.8, "readmission_rate_pct": 13.99, "rolling_3m_readmission_pct": 10.14, "complication_rate_pct": 9.09, "avg_satisfaction": 4.36, "gross_episode_revenue_usd": 3662415.0}, {"admission_month": "2023-06", "total_encounters": 138, "medical_tourist_encounters": 87, "intl_share_pct": 63.0, "prev_month_encounters": 143.0, "mom_volume_growth_pct": -3.5, "avg_wait_days": 16.26, "avg_los_days": 3.7, "readmission_rate_pct": 7.25, "rolling_3m_readmission_pct": 9.86, "complication_rate_pct": 13.77, "avg_satisfaction": 4.34, "gross_episode_revenue_usd": 3064379.0}, {"admission_month": "2023-07", "total_encounters": 137, "medical_tourist_encounters": 90, "intl_share_pct": 65.7, "prev_month_encounters": 138.0, "mom_volume_growth_pct": -0.7, "avg_wait_days": 15.74, "avg_los_days": 3.74, "readmission_rate_pct": 10.95, "rolling_3m_readmission_pct": 10.73, "complication_rate_pct": 13.14, "avg_satisfaction": 4.36, "gross_episode_revenue_usd": 3080824.0}, {"admission_month": "2023-08", "total_encounters": 132, "medical_tourist_encounters": 89, "intl_share_pct": 67.4, "prev_month_encounters": 137.0, "mom_volume_growth_pct": -3.6, "avg_wait_days": 14.05, "avg_los_days": 3.31, "readmission_rate_pct": 6.06, "rolling_3m_readmission_pct": 8.09, "complication_rate_pct": 10.61, "avg_satisfaction": 4.42, "gross_episode_revenue_usd": 2786953.0}, {"admission_month": "2023-09", "total_encounters": 141, "medical_tourist_encounters": 82, "intl_share_pct": 58.2, "prev_month_encounters": 132.0, "mom_volume_growth_pct": 6.8, "avg_wait_days": 16.74, "avg_los_days": 3.84, "readmission_rate_pct": 9.22, "rolling_3m_readmission_pct": 8.74, "complication_rate_pct": 11.35, "avg_satisfaction": 4.37, "gross_episode_revenue_usd": 4006821.0}, {"admission_month": "2023-10", "total_encounters": 171, "medical_tourist_encounters": 106, "intl_share_pct": 62.0, "prev_month_encounters": 141.0, "mom_volume_growth_pct": 21.3, "avg_wait_days": 14.74, "avg_los_days": 3.61, "readmission_rate_pct": 6.43, "rolling_3m_readmission_pct": 7.24, "complication_rate_pct": 10.53, "avg_satisfaction": 4.42, "gross_episode_revenue_usd": 4033826.0}, {"admission_month": "2023-11", "total_encounters": 175, "medical_tourist_encounters": 119, "intl_share_pct": 68.0, "prev_month_encounters": 171.0, "mom_volume_growth_pct": 2.3, "avg_wait_days": 14.14, "avg_los_days": 3.82, "readmission_rate_pct": 8.0, "rolling_3m_readmission_pct": 7.88, "complication_rate_pct": 8.0, "avg_satisfaction": 4.47, "gross_episode_revenue_usd": 4233124.0}, {"admission_month": "2023-12", "total_encounters": 131, "medical_tourist_encounters": 95, "intl_share_pct": 72.5, "prev_month_encounters": 175.0, "mom_volume_growth_pct": -25.1, "avg_wait_days": 14.5, "avg_los_days": 3.53, "readmission_rate_pct": 11.45, "rolling_3m_readmission_pct": 8.63, "complication_rate_pct": 12.21, "avg_satisfaction": 4.42, "gross_episode_revenue_usd": 2912141.0}, {"admission_month": "2024-01", "total_encounters": 187, "medical_tourist_encounters": 130, "intl_share_pct": 69.5, "prev_month_encounters": 131.0, "mom_volume_growth_pct": 42.7, "avg_wait_days": 14.12, "avg_los_days": 3.48, "readmission_rate_pct": 5.35, "rolling_3m_readmission_pct": 8.27, "complication_rate_pct": 6.95, "avg_satisfaction": 4.51, "gross_episode_revenue_usd": 4363915.0}, {"admission_month": "2024-02", "total_encounters": 173, "medical_tourist_encounters": 107, "intl_share_pct": 61.8, "prev_month_encounters": 187.0, "mom_volume_growth_pct": -7.5, "avg_wait_days": 15.69, "avg_los_days": 3.83, "readmission_rate_pct": 6.36, "rolling_3m_readmission_pct": 7.72, "complication_rate_pct": 6.36, "avg_satisfaction": 4.45, "gross_episode_revenue_usd": 3964127.0}, {"admission_month": "2024-03", "total_encounters": 183, "medical_tourist_encounters": 114, "intl_share_pct": 62.3, "prev_month_encounters": 173.0, "mom_volume_growth_pct": 5.8, "avg_wait_days": 17.86, "avg_los_days": 3.67, "readmission_rate_pct": 3.83, "rolling_3m_readmission_pct": 5.18, "complication_rate_pct": 9.84, "avg_satisfaction": 4.43, "gross_episode_revenue_usd": 4166453.0}, {"admission_month": "2024-04", "total_encounters": 153, "medical_tourist_encounters": 98, "intl_share_pct": 64.1, "prev_month_encounters": 183.0, "mom_volume_growth_pct": -16.4, "avg_wait_days": 14.35, "avg_los_days": 3.96, "readmission_rate_pct": 9.15, "rolling_3m_readmission_pct": 6.45, "complication_rate_pct": 11.11, "avg_satisfaction": 4.41, "gross_episode_revenue_usd": 3744685.0}, {"admission_month": "2024-05", "total_encounters": 183, "medical_tourist_encounters": 112, "intl_share_pct": 61.2, "prev_month_encounters": 153.0, "mom_volume_growth_pct": 19.6, "avg_wait_days": 14.25, "avg_los_days": 3.46, "readmission_rate_pct": 8.2, "rolling_3m_readmission_pct": 7.06, "complication_rate_pct": 6.01, "avg_satisfaction": 4.48, "gross_episode_revenue_usd": 3932416.0}, {"admission_month": "2024-06", "total_encounters": 148, "medical_tourist_encounters": 95, "intl_share_pct": 64.2, "prev_month_encounters": 183.0, "mom_volume_growth_pct": -19.1, "avg_wait_days": 17.48, "avg_los_days": 3.84, "readmission_rate_pct": 11.49, "rolling_3m_readmission_pct": 9.61, "complication_rate_pct": 10.81, "avg_satisfaction": 4.39, "gross_episode_revenue_usd": 3555986.0}, {"admission_month": "2024-07", "total_encounters": 179, "medical_tourist_encounters": 109, "intl_share_pct": 60.9, "prev_month_encounters": 148.0, "mom_volume_growth_pct": 20.9, "avg_wait_days": 14.16, "avg_los_days": 3.82, "readmission_rate_pct": 8.94, "rolling_3m_readmission_pct": 9.54, "complication_rate_pct": 11.73, "avg_satisfaction": 4.44, "gross_episode_revenue_usd": 4108138.0}, {"admission_month": "2024-08", "total_encounters": 160, "medical_tourist_encounters": 105, "intl_share_pct": 65.6, "prev_month_encounters": 179.0, "mom_volume_growth_pct": -10.6, "avg_wait_days": 15.19, "avg_los_days": 3.79, "readmission_rate_pct": 6.88, "rolling_3m_readmission_pct": 9.1, "complication_rate_pct": 11.25, "avg_satisfaction": 4.42, "gross_episode_revenue_usd": 3938148.0}, {"admission_month": "2024-09", "total_encounters": 133, "medical_tourist_encounters": 92, "intl_share_pct": 69.2, "prev_month_encounters": 160.0, "mom_volume_growth_pct": -16.9, "avg_wait_days": 16.02, "avg_los_days": 3.83, "readmission_rate_pct": 11.28, "rolling_3m_readmission_pct": 9.03, "complication_rate_pct": 9.02, "avg_satisfaction": 4.38, "gross_episode_revenue_usd": 3053172.0}, {"admission_month": "2024-10", "total_encounters": 191, "medical_tourist_encounters": 125, "intl_share_pct": 65.4, "prev_month_encounters": 133.0, "mom_volume_growth_pct": 43.6, "avg_wait_days": 15.4, "avg_los_days": 3.8, "readmission_rate_pct": 8.9, "rolling_3m_readmission_pct": 9.02, "complication_rate_pct": 9.95, "avg_satisfaction": 4.44, "gross_episode_revenue_usd": 4643364.0}, {"admission_month": "2024-11", "total_encounters": 178, "medical_tourist_encounters": 116, "intl_share_pct": 65.2, "prev_month_encounters": 191.0, "mom_volume_growth_pct": -6.8, "avg_wait_days": 14.43, "avg_los_days": 3.7, "readmission_rate_pct": 8.99, "rolling_3m_readmission_pct": 9.72, "complication_rate_pct": 11.24, "avg_satisfaction": 4.44, "gross_episode_revenue_usd": 4492929.0}, {"admission_month": "2024-12", "total_encounters": 161, "medical_tourist_encounters": 99, "intl_share_pct": 61.5, "prev_month_encounters": 178.0, "mom_volume_growth_pct": -9.6, "avg_wait_days": 15.57, "avg_los_days": 4.22, "readmission_rate_pct": 10.56, "rolling_3m_readmission_pct": 9.48, "complication_rate_pct": 13.66, "avg_satisfaction": 4.36, "gross_episode_revenue_usd": 3925922.0}, {"admission_month": "2025-01", "total_encounters": 211, "medical_tourist_encounters": 144, "intl_share_pct": 68.2, "prev_month_encounters": 161.0, "mom_volume_growth_pct": 31.1, "avg_wait_days": 15.4, "avg_los_days": 3.88, "readmission_rate_pct": 9.0, "rolling_3m_readmission_pct": 9.52, "complication_rate_pct": 9.0, "avg_satisfaction": 4.45, "gross_episode_revenue_usd": 5424202.0}, {"admission_month": "2025-02", "total_encounters": 160, "medical_tourist_encounters": 95, "intl_share_pct": 59.4, "prev_month_encounters": 211.0, "mom_volume_growth_pct": -24.2, "avg_wait_days": 15.36, "avg_los_days": 3.86, "readmission_rate_pct": 10.0, "rolling_3m_readmission_pct": 9.85, "complication_rate_pct": 8.75, "avg_satisfaction": 4.4, "gross_episode_revenue_usd": 3648053.0}, {"admission_month": "2025-03", "total_encounters": 202, "medical_tourist_encounters": 137, "intl_share_pct": 67.8, "prev_month_encounters": 160.0, "mom_volume_growth_pct": 26.3, "avg_wait_days": 12.79, "avg_los_days": 3.47, "readmission_rate_pct": 8.42, "rolling_3m_readmission_pct": 9.14, "complication_rate_pct": 8.42, "avg_satisfaction": 4.48, "gross_episode_revenue_usd": 4132915.0}, {"admission_month": "2025-04", "total_encounters": 162, "medical_tourist_encounters": 99, "intl_share_pct": 61.1, "prev_month_encounters": 202.0, "mom_volume_growth_pct": -19.8, "avg_wait_days": 16.25, "avg_los_days": 3.55, "readmission_rate_pct": 8.64, "rolling_3m_readmission_pct": 9.02, "complication_rate_pct": 11.11, "avg_satisfaction": 4.33, "gross_episode_revenue_usd": 3892659.0}, {"admission_month": "2025-05", "total_encounters": 194, "medical_tourist_encounters": 123, "intl_share_pct": 63.4, "prev_month_encounters": 162.0, "mom_volume_growth_pct": 19.8, "avg_wait_days": 15.15, "avg_los_days": 4.11, "readmission_rate_pct": 9.79, "rolling_3m_readmission_pct": 8.95, "complication_rate_pct": 12.37, "avg_satisfaction": 4.4, "gross_episode_revenue_usd": 4972806.0}, {"admission_month": "2025-06", "total_encounters": 186, "medical_tourist_encounters": 111, "intl_share_pct": 59.7, "prev_month_encounters": 194.0, "mom_volume_growth_pct": -4.1, "avg_wait_days": 14.37, "avg_los_days": 3.84, "readmission_rate_pct": 10.75, "rolling_3m_readmission_pct": 9.73, "complication_rate_pct": 9.68, "avg_satisfaction": 4.42, "gross_episode_revenue_usd": 4521170.0}, {"admission_month": "2025-07", "total_encounters": 162, "medical_tourist_encounters": 111, "intl_share_pct": 68.5, "prev_month_encounters": 186.0, "mom_volume_growth_pct": -12.9, "avg_wait_days": 14.62, "avg_los_days": 3.67, "readmission_rate_pct": 12.35, "rolling_3m_readmission_pct": 10.96, "complication_rate_pct": 7.41, "avg_satisfaction": 4.45, "gross_episode_revenue_usd": 3653074.0}, {"admission_month": "2025-08", "total_encounters": 165, "medical_tourist_encounters": 113, "intl_share_pct": 68.5, "prev_month_encounters": 162.0, "mom_volume_growth_pct": 1.9, "avg_wait_days": 15.48, "avg_los_days": 4.02, "readmission_rate_pct": 10.91, "rolling_3m_readmission_pct": 11.34, "complication_rate_pct": 10.3, "avg_satisfaction": 4.37, "gross_episode_revenue_usd": 4094828.0}, {"admission_month": "2025-09", "total_encounters": 155, "medical_tourist_encounters": 101, "intl_share_pct": 65.2, "prev_month_encounters": 165.0, "mom_volume_growth_pct": -6.1, "avg_wait_days": 14.43, "avg_los_days": 3.62, "readmission_rate_pct": 10.32, "rolling_3m_readmission_pct": 11.19, "complication_rate_pct": 10.97, "avg_satisfaction": 4.41, "gross_episode_revenue_usd": 3629775.0}, {"admission_month": "2025-10", "total_encounters": 205, "medical_tourist_encounters": 129, "intl_share_pct": 62.9, "prev_month_encounters": 155.0, "mom_volume_growth_pct": 32.3, "avg_wait_days": 16.77, "avg_los_days": 3.88, "readmission_rate_pct": 8.29, "rolling_3m_readmission_pct": 9.84, "complication_rate_pct": 11.22, "avg_satisfaction": 4.34, "gross_episode_revenue_usd": 4987821.0}, {"admission_month": "2025-11", "total_encounters": 199, "medical_tourist_encounters": 130, "intl_share_pct": 65.3, "prev_month_encounters": 205.0, "mom_volume_growth_pct": -2.9, "avg_wait_days": 15.58, "avg_los_days": 3.88, "readmission_rate_pct": 9.55, "rolling_3m_readmission_pct": 9.39, "complication_rate_pct": 12.06, "avg_satisfaction": 4.4, "gross_episode_revenue_usd": 4969831.0}, {"admission_month": "2025-12", "total_encounters": 172, "medical_tourist_encounters": 123, "intl_share_pct": 71.5, "prev_month_encounters": 199.0, "mom_volume_growth_pct": -13.6, "avg_wait_days": 13.37, "avg_los_days": 3.63, "readmission_rate_pct": 7.56, "rolling_3m_readmission_pct": 8.47, "complication_rate_pct": 9.88, "avg_satisfaction": 4.48, "gross_episode_revenue_usd": 3778014.0}], "macro": [{"country_code": "DEU", "country_name": "Germany", "region": "Western Europe", "health_system_model": "Statutory Social Health Insurance", "wb_beds_per_1000": 7.55, "wb_physicians_per_1000": 4.53, "wb_health_spend_pc_usd": 6849.0, "wb_health_spend_pct_gdp": 12.27, "wb_oop_pct_spend": 10.7, "wb_life_expectancy": 80.79, "wb_infant_mortality": 3.1, "wb_gdp_per_capita_usd": 56104.0, "partner_hospitals": 3, "total_encounters": 960, "avg_procedure_cost_usd": 23611.0, "avg_patient_savings_pct": -51.6, "avg_readmission_rate_pct": 8.85, "avg_satisfaction": 4.34}, {"country_code": "ARE", "country_name": "United Arab Emirates", "region": "Middle East (GCC)", "health_system_model": "Mixed Public-Private Insurance", "wb_beds_per_1000": 1.87, "wb_physicians_per_1000": 2.99, "wb_health_spend_pc_usd": 2402.0, "wb_health_spend_pct_gdp": 4.97, "wb_oop_pct_spend": 9.7, "wb_life_expectancy": 83.07, "wb_infant_mortality": 3.8, "wb_gdp_per_capita_usd": 50274.0, "partner_hospitals": 4, "total_encounters": 951, "avg_procedure_cost_usd": 22001.0, "avg_patient_savings_pct": -47.3, "avg_readmission_rate_pct": 8.52, "avg_satisfaction": 4.51}, {"country_code": "TUR", "country_name": "Turkey", "region": "Europe / Middle East", "health_system_model": "Universal + Private Medical Tourism", "wb_beds_per_1000": 3.05, "wb_physicians_per_1000": 2.24, "wb_health_spend_pc_usd": 548.0, "wb_health_spend_pct_gdp": 4.28, "wb_oop_pct_spend": 19.0, "wb_life_expectancy": 77.42, "wb_infant_mortality": 8.0, "wb_gdp_per_capita_usd": 15893.0, "partner_hospitals": 3, "total_encounters": 928, "avg_procedure_cost_usd": 12732.0, "avg_patient_savings_pct": 25.1, "avg_readmission_rate_pct": 9.38, "avg_satisfaction": 4.54}, {"country_code": "USA", "country_name": "United States", "region": "North America", "health_system_model": "Employer/Private + Medicare/Medicaid", "wb_beds_per_1000": 2.68, "wb_physicians_per_1000": 3.68, "wb_health_spend_pc_usd": 13473.0, "wb_health_spend_pct_gdp": 16.69, "wb_oop_pct_spend": 10.9, "wb_life_expectancy": 78.89, "wb_infant_mortality": 5.5, "wb_gdp_per_capita_usd": 86170.0, "partner_hospitals": 3, "total_encounters": 788, "avg_procedure_cost_usd": 45272.0, "avg_patient_savings_pct": -76.9, "avg_readmission_rate_pct": 11.17, "avg_satisfaction": 4.08}, {"country_code": "THA", "country_name": "Thailand", "region": "Southeast Asia", "health_system_model": "Universal + Private International Hubs", "wb_beds_per_1000": 2.39, "wb_physicians_per_1000": 0.54, "wb_health_spend_pc_usd": 327.0, "wb_health_spend_pct_gdp": 4.54, "wb_oop_pct_spend": 9.9, "wb_life_expectancy": 76.56, "wb_infant_mortality": 7.7, "wb_gdp_per_capita_usd": 7387.0, "partner_hospitals": 3, "total_encounters": 777, "avg_procedure_cost_usd": 13635.0, "avg_patient_savings_pct": 14.4, "avg_readmission_rate_pct": 7.21, "avg_satisfaction": 4.61}, {"country_code": "IND", "country_name": "India", "region": "South Asia", "health_system_model": "Private-Dominant + Public Schemes", "wb_beds_per_1000": 1.59, "wb_physicians_per_1000": 0.72, "wb_health_spend_pc_usd": 85.0, "wb_health_spend_pct_gdp": 3.34, "wb_oop_pct_spend": 43.9, "wb_life_expectancy": 72.23, "wb_infant_mortality": 23.3, "wb_gdp_per_capita_usd": 2592.0, "partner_hospitals": 3, "total_encounters": 747, "avg_procedure_cost_usd": 8748.0, "avg_patient_savings_pct": 29.0, "avg_readmission_rate_pct": 10.04, "avg_satisfaction": 4.48}, {"country_code": "SGP", "country_name": "Singapore", "region": "Southeast Asia", "health_system_model": "Mixed Public Savings (Medisave) + Private", "wb_beds_per_1000": 2.81, "wb_physicians_per_1000": 2.83, "wb_health_spend_pc_usd": 3922.0, "wb_health_spend_pct_gdp": 4.49, "wb_oop_pct_spend": 25.4, "wb_life_expectancy": 83.35, "wb_infant_mortality": 2.2, "wb_gdp_per_capita_usd": 94897.0, "partner_hospitals": 2, "total_encounters": 524, "avg_procedure_cost_usd": 27385.0, "avg_patient_savings_pct": -75.6, "avg_readmission_rate_pct": 5.53, "avg_satisfaction": 4.56}, {"country_code": "SWE", "country_name": "Sweden", "region": "Northern Europe (Nordic)", "health_system_model": "Universal Tax-Funded", "wb_beds_per_1000": 1.9, "wb_physicians_per_1000": 4.41, "wb_health_spend_pc_usd": 6485.0, "wb_health_spend_pct_gdp": 11.22, "wb_oop_pct_spend": 13.4, "wb_life_expectancy": 84.06, "wb_infant_mortality": 2.0, "wb_gdp_per_capita_usd": 57223.0, "partner_hospitals": 3, "total_encounters": 325, "avg_procedure_cost_usd": 25518.0, "avg_patient_savings_pct": -31.8, "avg_readmission_rate_pct": 10.15, "avg_satisfaction": 3.92}], "audit": [{"audit_id": 1, "run_timestamp_utc": "2026-11-24T00:49:22.927555+00:00", "dataset_name": "raw_hospitals", "check_name": "Country alias standardization (ISO-3)", "rows_evaluated": 24, "rows_flagged": 18, "action_taken": "Mapped country variants to ISO-3 codes", "severity": "INFO"}, {"audit_id": 2, "run_timestamp_utc": "2026-11-24T00:49:22.927555+00:00", "dataset_name": "raw_patients", "check_name": "Origin country alias standardization (ISO-3)", "rows_evaluated": 4200, "rows_flagged": 248, "action_taken": "Mapped origin country variants to ISO-3 codes", "severity": "INFO"}, {"audit_id": 3, "run_timestamp_utc": "2026-11-24T00:49:22.927555+00:00", "dataset_name": "raw_encounters", "check_name": "Duplicate encounter_id detection", "rows_evaluated": 6029, "rows_flagged": 18, "action_taken": "Removed duplicate rows and logged to quarantine", "severity": "QUARANTINE"}, {"audit_id": 4, "run_timestamp_utc": "2026-11-24T00:49:22.927555+00:00", "dataset_name": "raw_encounters", "check_name": "Mixed date format standardization (DD/MM/YYYY -> ISO-8601)", "rows_evaluated": 6011, "rows_flagged": 300, "action_taken": "Converted non-ISO dates to YYYY-MM-DD", "severity": "INFO"}, {"audit_id": 5, "run_timestamp_utc": "2026-11-24T00:49:22.927555+00:00", "dataset_name": "raw_encounters", "check_name": "Foreign key referential integrity check", "rows_evaluated": 6011, "rows_flagged": 5, "action_taken": "Quarantined orphan records prior to warehouse load", "severity": "QUARANTINE"}, {"audit_id": 6, "run_timestamp_utc": "2026-11-24T00:49:22.927555+00:00", "dataset_name": "raw_encounters", "check_name": "Clinical & operational domain range validation", "rows_evaluated": 6006, "rows_flagged": 6, "action_taken": "Quarantined records violating clinical/bounds rules", "severity": "QUARANTINE"}, {"audit_id": 7, "run_timestamp_utc": "2026-11-24T00:49:22.927555+00:00", "dataset_name": "raw_encounters", "check_name": "Missing patient satisfaction survey handling", "rows_evaluated": 6000, "rows_flagged": 193, "action_taken": "Imputed with hospital median & set satisfaction_imputed=1 flag", "severity": "WARNING"}, {"audit_id": 8, "run_timestamp_utc": "2026-11-24T00:49:22.927555+00:00", "dataset_name": "raw_billing", "check_name": "Duplicate encounter billing deduplication", "rows_evaluated": 6029, "rows_flagged": 18, "action_taken": "Retained unique encounter billing rows", "severity": "QUARANTINE"}, {"audit_id": 9, "run_timestamp_utc": "2026-11-24T00:49:22.927555+00:00", "dataset_name": "raw_billing", "check_name": "Billing validity & encounter FK check", "rows_evaluated": 6011, "rows_flagged": 11, "action_taken": "Removed negative/unlinked billing records", "severity": "QUARANTINE"}, {"audit_id": 10, "run_timestamp_utc": "2026-11-24T00:49:22.927555+00:00", "dataset_name": "worldbank_health_indicators", "check_name": "Official World Bank API missingness audit (2015-2024)", "rows_evaluated": 640, "rows_flagged": 53, "action_taken": "Preserved NULL reporting lags truthfully; views use latest non-null observation", "severity": "WARNING"}], "stats": {"jci_readm": {"group1_rate_pct": 7.77, "group1_ci95_pct": [7.05, 8.55], "group1_n": 4905, "group2_rate_pct": 13.97, "group2_ci95_pct": [12.04, 16.15], "group2_n": 1095, "abs_diff_pp": -6.21, "relative_risk_reduction_pct": 44.4, "odds_ratio": 0.519, "z_stat": -6.52, "chi2_stat": 42.509, "p_value": 7.036193849785377e-11, "significant_05": true}, "jci_comp": {"group1_rate_pct": 9.5, "group1_ci95_pct": [8.71, 10.35], "group1_n": 4905, "group2_rate_pct": 14.25, "group2_ci95_pct": [12.3, 16.44], "group2_n": 1095, "abs_diff_pp": -4.75, "relative_risk_reduction_pct": 33.3, "odds_ratio": 0.632, "z_stat": -4.658, "chi2_stat": 21.7, "p_value": 3.187834018536506e-06, "significant_05": true}, "wait_test": {"mt_mean_days": 11.83, "mt_median_days": 9.0, "dom_mean_days": 21.11, "dom_median_days": 17.0, "welch_t": -25.193, "welch_p": 1.279744506869275e-127, "mannwhitney_u": 2336718.0, "mannwhitney_p": 1.7237238671916598e-170, "significant_05": true}, "ols_sat_r2": 0.6716, "ols_los_r2": 0.9233}};
+
+const countrySel = document.getElementById("fCountry");
+[...new Set(DATA.hospitals.map(h => h.country_name))].sort().forEach(c => {
+  const opt = document.createElement("option");
+  opt.value = c; opt.textContent = c;
+  countrySel.appendChild(opt);
+});
+
+function fmtUSD(v) { return v == null ? "—" : "$" + Math.round(v).toLocaleString("en-US"); }
+
+function renderStats() {
+  const s = DATA.stats;
+  document.getElementById("statsBox").innerHTML = `
+    <div class="stat-pill"><strong>JCI Readmission RRR:</strong> ${s.jci_readm.relative_risk_reduction_pct}% (OR ${s.jci_readm.odds_ratio}, p=${s.jci_readm.p_value.toExponential(1)})</div>
+    <div class="stat-pill"><strong>JCI Complication RRR:</strong> ${s.jci_comp.relative_risk_reduction_pct}% (OR ${s.jci_comp.odds_ratio}, p=${s.jci_comp.p_value.toExponential(1)})</div>
+    <div class="stat-pill"><strong>Wait Time Advantage:</strong> Intl ${s.wait_test.mt_mean_days}d vs Domestic ${s.wait_test.dom_mean_days}d (p=${s.wait_test.welch_p.toExponential(1)})</div>
+    <div class="stat-pill"><strong>OLS Models:</strong> Satisfaction R&sup2; = ${(s.ols_sat_r2*100).toFixed(1)}% &bull; LOS R&sup2; = ${(s.ols_los_r2*100).toFixed(1)}%</div>
+  `;
+}
+
+function renderStaticTables() {
+  document.getElementById("corridorBody").innerHTML = DATA.corridors.slice(0, 7).map(c => `
+    <tr>
+      <td><strong>${c.origin_country_code} &rarr; ${c.destination_country}</strong></td>
+      <td>${c.encounter_volume}</td>
+      <td>${fmtUSD(c.avg_destination_total_usd)}</td>
+      <td style="font-weight:700;color:${c.avg_net_savings_pct >= 0 ? '#0D9488' : '#DC2626'}">${c.avg_net_savings_pct >= 0 ? '+' : ''}${c.avg_net_savings_pct}%</td>
+    </tr>
+  `).join("");
+
+  document.getElementById("macroBody").innerHTML = DATA.macro.map(m => `
+    <tr>
+      <td><strong>${m.country_name}</strong></td>
+      <td>${m.health_system_model}</td>
+      <td>${fmtUSD(m.wb_health_spend_pc_usd)}</td>
+      <td>${m.wb_oop_pct_spend != null ? m.wb_oop_pct_spend.toFixed(1) + "%" : "—"}</td>
+      <td>${m.wb_beds_per_1000 != null ? m.wb_beds_per_1000.toFixed(2) : "—"}</td>
+      <td>${m.wb_life_expectancy != null ? m.wb_life_expectancy.toFixed(1) + " yrs" : "—"}</td>
+      <td>${fmtUSD(m.avg_procedure_cost_usd)}</td>
+      <td>${m.avg_readmission_rate_pct}%</td>
+    </tr>
+  `).join("");
+}
+
+function renderQuadrant(rows) {
+  const svg = document.getElementById("quadrantSvg");
+  const W = 640, H = 340, padL = 54, padR = 24, padT = 20, padB = 42;
+  const maxCost = Math.max(...DATA.hospitals.map(h => h.avg_procedure_cost_usd)) * 1.08;
+  const minQual = Math.min(...DATA.hospitals.map(h => h.composite_quality_score)) - 2;
+  const maxQual = Math.max(...DATA.hospitals.map(h => h.composite_quality_score)) + 2;
+  const sx = c => padL + (c / maxCost) * (W - padL - padR);
+  const sy = q => H - padB - ((q - minQual) / (maxQual - minQual)) * (H - padT - padB);
+
+  const medCost = DATA.hospitals.map(h => h.avg_procedure_cost_usd).sort((a,b)=>a-b)[12];
+  const medQual = DATA.hospitals.map(h => h.composite_quality_score).sort((a,b)=>a-b)[12];
+
+  let out = `
+    <rect x="${padL}" y="${padT}" width="${sx(medCost)-padL}" height="${sy(medQual)-padT}" fill="#CCFBF1" opacity="0.28"/>
+    <line x1="${sx(medCost)}" y1="${padT}" x2="${sx(medCost)}" y2="${H-padB}" stroke="#94A3B8" stroke-dasharray="4 4"/>
+    <line x1="${padL}" y1="${sy(medQual)}" x2="${W-padR}" y2="${sy(medQual)}" stroke="#94A3B8" stroke-dasharray="4 4"/>
+    <line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" stroke="#CBD5E1"/>
+    <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${H-padB}" stroke="#CBD5E1"/>
+    <text x="${padL+6}" y="${padT+14}" font-size="10" font-weight="700" fill="#0F766E">HIGH-VALUE LEADERS</text>
+    <text x="${(padL+W-padR)/2}" y="${H-8}" text-anchor="middle" font-size="11" fill="#475569">Average Procedure Cost (USD)</text>
+    <text x="14" y="${(padT+H-padB)/2}" text-anchor="middle" font-size="11" fill="#475569" transform="rotate(-90 14 ${(padT+H-padB)/2})">Composite Quality Score</text>
+  `;
+  for (let t = 0; t <= 4; t++) {
+    const cv = (maxCost / 4) * t;
+    out += `<text x="${sx(cv)}" y="${H-padB+15}" text-anchor="middle" font-size="10" fill="#64748B">$${Math.round(cv/1000)}k</text>`;
+    const qv = minQual + ((maxQual - minQual) / 4) * t;
+    out += `<text x="${padL-8}" y="${sy(qv)+3}" text-anchor="end" font-size="10" fill="#64748B">${qv.toFixed(0)}</text>`;
+  }
+  rows.forEach(h => {
+    const cx = sx(h.avg_procedure_cost_usd), cy = sy(h.composite_quality_score);
+    const r = Math.max(6, Math.sqrt(h.total_encounters) * 0.65);
+    const fill = h.jci_accredited ? "#0D9488" : "#DC2626";
+    out += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}" fill-opacity="0.82" stroke="#fff" stroke-width="1.4">
+      <title>${h.hospital_name} (${h.country_name})&#10;Rank #${h.quality_rank} | Quality: ${h.composite_quality_score}&#10;Avg Cost: ${fmtUSD(h.avg_procedure_cost_usd)} | Readm: ${h.readmission_rate_pct}%</title>
+    </circle>`;
+  });
+  svg.innerHTML = out;
+}
+
+function update() {
+  const cVal = document.getElementById("fCountry").value;
+  const jVal = document.getElementById("fJci").value;
+  const tVal = document.getElementById("fTier").value;
+
+  const filtered = DATA.hospitals.filter(h =>
+    (cVal === "ALL" || h.country_name === cVal) &&
+    (jVal === "ALL" || String(h.jci_accredited) === jVal) &&
+    (tVal === "ALL" || h.hospital_tier === tVal)
+  );
+
+  const totEnc = filtered.reduce((s, h) => s + h.total_encounters, 0);
+  const intlEnc = filtered.reduce((s, h) => s + h.intl_encounters, 0);
+  const wAvg = (fn) => totEnc ? filtered.reduce((s, h) => s + fn(h) * h.total_encounters, 0) / totEnc : 0;
+
+  const kpis = [
+    ["Partner Hospitals", filtered.length, `${filtered.filter(h=>h.jci_accredited).length} JCI accredited`],
+    ["Clean Encounters", totEnc.toLocaleString("en-US"), `${totEnc ? (100*intlEnc/totEnc).toFixed(1) : 0}% medical tourists`],
+    ["Avg Quality Score", wAvg(h=>h.composite_quality_score).toFixed(2), "Composite 0–100 index"],
+    ["30-Day Readmission", wAvg(h=>h.readmission_rate_pct).toFixed(2) + "%", `Complications: ${wAvg(h=>h.complication_rate_pct).toFixed(2)}%`],
+    ["Avg Wait Time", wAvg(h=>h.avg_wait_days).toFixed(1) + " days", `Avg LOS: ${wAvg(h=>h.avg_los_days).toFixed(1)} days`],
+    ["Avg Procedure Cost", fmtUSD(wAvg(h=>h.avg_procedure_cost_usd)), `Avg Satisfaction: ${wAvg(h=>h.avg_satisfaction).toFixed(2)} / 5.0`],
+  ];
+  document.getElementById("kpiGrid").innerHTML = kpis.map(([l,v,s]) => `
+    <div class="kpi-card">
+      <div class="kpi-label">${l}</div>
+      <div class="kpi-value">${v}</div>
+      <div class="kpi-sub">${s}</div>
+    </div>
+  `).join("");
+
+  document.getElementById("hospBody").innerHTML = filtered.map(h => `
+    <tr>
+      <td><strong>#${h.quality_rank}</strong></td>
+      <td><strong>${h.hospital_name}</strong><br><span style="font-size:0.76rem;color:#64748B">${h.city}</span></td>
+      <td>${h.country_name}</td>
+      <td>${h.hospital_tier}</td>
+      <td><span class="badge ${h.jci_accredited ? 'badge-jci' : 'badge-non'}">${h.jci_accredited ? 'JCI' : 'Non-JCI'}</span></td>
+      <td>${h.total_encounters}</td>
+      <td>${fmtUSD(h.avg_procedure_cost_usd)}</td>
+      <td>${h.avg_wait_days}</td>
+      <td>${h.readmission_rate_pct}%</td>
+      <td>${h.avg_satisfaction}</td>
+      <td><span class="bar-wrap"><span class="bar-fill" style="width:${Math.min(100, h.composite_quality_score)}%"></span></span><strong>${h.composite_quality_score}</strong></td>
+    </tr>
+  `).join("");
+
+  renderQuadrant(filtered);
+}
+
+["fCountry", "fJci", "fTier"].forEach(id => document.getElementById(id).addEventListener("change", update));
+renderStats();
+renderStaticTables();
+update();
+</script>
+</body>
+</html>

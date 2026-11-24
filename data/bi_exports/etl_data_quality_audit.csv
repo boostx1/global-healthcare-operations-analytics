@@ -1,0 +1,11 @@
+audit_id,run_timestamp_utc,dataset_name,check_name,rows_evaluated,rows_flagged,action_taken,severity
+1,2026-11-24T00:49:22.927555+00:00,raw_hospitals,Country alias standardization (ISO-3),24,18,Mapped country variants to ISO-3 codes,INFO
+2,2026-11-24T00:49:22.927555+00:00,raw_patients,Origin country alias standardization (ISO-3),4200,248,Mapped origin country variants to ISO-3 codes,INFO
+3,2026-11-24T00:49:22.927555+00:00,raw_encounters,Duplicate encounter_id detection,6029,18,Removed duplicate rows and logged to quarantine,QUARANTINE
+4,2026-11-24T00:49:22.927555+00:00,raw_encounters,Mixed date format standardization (DD/MM/YYYY -> ISO-8601),6011,300,Converted non-ISO dates to YYYY-MM-DD,INFO
+5,2026-11-24T00:49:22.927555+00:00,raw_encounters,Foreign key referential integrity check,6011,5,Quarantined orphan records prior to warehouse load,QUARANTINE
+6,2026-11-24T00:49:22.927555+00:00,raw_encounters,Clinical & operational domain range validation,6006,6,Quarantined records violating clinical/bounds rules,QUARANTINE
+7,2026-11-24T00:49:22.927555+00:00,raw_encounters,Missing patient satisfaction survey handling,6000,193,Imputed with hospital median & set satisfaction_imputed=1 flag,WARNING
+8,2026-11-24T00:49:22.927555+00:00,raw_billing,Duplicate encounter billing deduplication,6029,18,Retained unique encounter billing rows,QUARANTINE
+9,2026-11-24T00:49:22.927555+00:00,raw_billing,Billing validity & encounter FK check,6011,11,Removed negative/unlinked billing records,QUARANTINE
+10,2026-11-24T00:49:22.927555+00:00,worldbank_health_indicators,Official World Bank API missingness audit (2015-2024),640,53,Preserved NULL reporting lags truthfully; views use latest non-null observation,WARNING

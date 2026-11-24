@@ -1,0 +1,9 @@
+country_code,country_name,region,health_system_model,wb_beds_per_1000,wb_physicians_per_1000,wb_health_spend_pc_usd,wb_health_spend_pct_gdp,wb_oop_pct_spend,wb_life_expectancy,wb_infant_mortality,wb_gdp_per_capita_usd,partner_hospitals,total_encounters,avg_procedure_cost_usd,avg_patient_savings_pct,avg_readmission_rate_pct,avg_satisfaction
+DEU,Germany,Western Europe,Statutory Social Health Insurance,7.55,4.53,6849.0,12.27,10.7,80.79,3.1,56104.0,3,960,23611.0,-51.6,8.85,4.34
+ARE,United Arab Emirates,Middle East (GCC),Mixed Public-Private Insurance,1.87,2.99,2402.0,4.97,9.7,83.07,3.8,50274.0,4,951,22001.0,-47.3,8.52,4.51
+TUR,Turkey,Europe / Middle East,Universal + Private Medical Tourism,3.05,2.24,548.0,4.28,19.0,77.42,8.0,15893.0,3,928,12732.0,25.1,9.38,4.54
+USA,United States,North America,Employer/Private + Medicare/Medicaid,2.68,3.68,13473.0,16.69,10.9,78.89,5.5,86170.0,3,788,45272.0,-76.9,11.17,4.08
+THA,Thailand,Southeast Asia,Universal + Private International Hubs,2.39,0.54,327.0,4.54,9.9,76.56,7.7,7387.0,3,777,13635.0,14.4,7.21,4.61
+IND,India,South Asia,Private-Dominant + Public Schemes,1.59,0.72,85.0,3.34,43.9,72.23,23.3,2592.0,3,747,8748.0,29.0,10.04,4.48
+SGP,Singapore,Southeast Asia,Mixed Public Savings (Medisave) + Private,2.81,2.83,3922.0,4.49,25.4,83.35,2.2,94897.0,2,524,27385.0,-75.6,5.53,4.56
+SWE,Sweden,Northern Europe (Nordic),Universal Tax-Funded,1.9,4.41,6485.0,11.22,13.4,84.06,2.0,57223.0,3,325,25518.0,-31.8,10.15,3.92

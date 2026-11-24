@@ -1,0 +1,641 @@
+country_code,country_name,year,indicator_code,indicator_name,value
+ARE,United Arab Emirates,2015,NY.GDP.PCAP.CD,gdp_per_capita_usd,44910.3459
+ARE,United Arab Emirates,2016,NY.GDP.PCAP.CD,gdp_per_capita_usd,42721.1136
+ARE,United Arab Emirates,2017,NY.GDP.PCAP.CD,gdp_per_capita_usd,43733.6242
+ARE,United Arab Emirates,2018,NY.GDP.PCAP.CD,gdp_per_capita_usd,47135.3479
+ARE,United Arab Emirates,2019,NY.GDP.PCAP.CD,gdp_per_capita_usd,45938.6085
+ARE,United Arab Emirates,2020,NY.GDP.PCAP.CD,gdp_per_capita_usd,37991.7384
+ARE,United Arab Emirates,2021,NY.GDP.PCAP.CD,gdp_per_capita_usd,44118.4936
+ARE,United Arab Emirates,2022,NY.GDP.PCAP.CD,gdp_per_capita_usd,50759.759
+ARE,United Arab Emirates,2023,NY.GDP.PCAP.CD,gdp_per_capita_usd,49850.6945
+ARE,United Arab Emirates,2024,NY.GDP.PCAP.CD,gdp_per_capita_usd,50273.5126
+ARE,United Arab Emirates,2015,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.43
+ARE,United Arab Emirates,2016,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.39
+ARE,United Arab Emirates,2017,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.46
+ARE,United Arab Emirates,2018,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.6
+ARE,United Arab Emirates,2019,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.83
+ARE,United Arab Emirates,2020,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.91
+ARE,United Arab Emirates,2021,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.88
+ARE,United Arab Emirates,2022,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.87
+ARE,United Arab Emirates,2023,SH.MED.BEDS.ZS,hospital_beds_per_1000,
+ARE,United Arab Emirates,2024,SH.MED.BEDS.ZS,hospital_beds_per_1000,
+ARE,United Arab Emirates,2015,SH.MED.PHYS.ZS,physicians_per_1000,2.361
+ARE,United Arab Emirates,2016,SH.MED.PHYS.ZS,physicians_per_1000,2.458
+ARE,United Arab Emirates,2017,SH.MED.PHYS.ZS,physicians_per_1000,2.502
+ARE,United Arab Emirates,2018,SH.MED.PHYS.ZS,physicians_per_1000,2.605
+ARE,United Arab Emirates,2019,SH.MED.PHYS.ZS,physicians_per_1000,2.71
+ARE,United Arab Emirates,2020,SH.MED.PHYS.ZS,physicians_per_1000,2.83
+ARE,United Arab Emirates,2021,SH.MED.PHYS.ZS,physicians_per_1000,2.786
+ARE,United Arab Emirates,2022,SH.MED.PHYS.ZS,physicians_per_1000,2.915
+ARE,United Arab Emirates,2023,SH.MED.PHYS.ZS,physicians_per_1000,2.992
+ARE,United Arab Emirates,2024,SH.MED.PHYS.ZS,physicians_per_1000,
+ARE,United Arab Emirates,2015,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.4661
+ARE,United Arab Emirates,2016,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.8958
+ARE,United Arab Emirates,2017,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.0085
+ARE,United Arab Emirates,2018,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.0985
+ARE,United Arab Emirates,2019,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.4029
+ARE,United Arab Emirates,2020,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,5.8248
+ARE,United Arab Emirates,2021,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,5.3049
+ARE,United Arab Emirates,2022,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.5654
+ARE,United Arab Emirates,2023,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.971
+ARE,United Arab Emirates,2024,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,
+ARE,United Arab Emirates,2015,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,1479.4974
+ARE,United Arab Emirates,2016,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,1592.9191
+ARE,United Arab Emirates,2017,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,1695.2031
+ARE,United Arab Emirates,2018,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,1872.5842
+ARE,United Arab Emirates,2019,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,1962.4673
+ARE,United Arab Emirates,2020,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,2154.4111
+ARE,United Arab Emirates,2021,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,2249.9631
+ARE,United Arab Emirates,2022,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,2240.905
+ARE,United Arab Emirates,2023,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,2401.5203
+ARE,United Arab Emirates,2024,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,
+ARE,United Arab Emirates,2015,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,17.7896
+ARE,United Arab Emirates,2016,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,15.9916
+ARE,United Arab Emirates,2017,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,11.4166
+ARE,United Arab Emirates,2018,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,12.6961
+ARE,United Arab Emirates,2019,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,12.2316
+ARE,United Arab Emirates,2020,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,11.2105
+ARE,United Arab Emirates,2021,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,10.4676
+ARE,United Arab Emirates,2022,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,9.7185
+ARE,United Arab Emirates,2023,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,9.6662
+ARE,United Arab Emirates,2024,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,
+ARE,United Arab Emirates,2015,SP.DYN.IMRT.IN,infant_mortality_per_1000,6.1
+ARE,United Arab Emirates,2016,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.8
+ARE,United Arab Emirates,2017,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.6
+ARE,United Arab Emirates,2018,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.3
+ARE,United Arab Emirates,2019,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.0
+ARE,United Arab Emirates,2020,SP.DYN.IMRT.IN,infant_mortality_per_1000,4.7
+ARE,United Arab Emirates,2021,SP.DYN.IMRT.IN,infant_mortality_per_1000,4.4
+ARE,United Arab Emirates,2022,SP.DYN.IMRT.IN,infant_mortality_per_1000,4.2
+ARE,United Arab Emirates,2023,SP.DYN.IMRT.IN,infant_mortality_per_1000,4.0
+ARE,United Arab Emirates,2024,SP.DYN.IMRT.IN,infant_mortality_per_1000,3.8
+ARE,United Arab Emirates,2015,SP.DYN.LE00.IN,life_expectancy_years,82.076
+ARE,United Arab Emirates,2016,SP.DYN.LE00.IN,life_expectancy_years,82.195
+ARE,United Arab Emirates,2017,SP.DYN.LE00.IN,life_expectancy_years,82.388
+ARE,United Arab Emirates,2018,SP.DYN.LE00.IN,life_expectancy_years,82.449
+ARE,United Arab Emirates,2019,SP.DYN.LE00.IN,life_expectancy_years,82.596
+ARE,United Arab Emirates,2020,SP.DYN.LE00.IN,life_expectancy_years,81.936
+ARE,United Arab Emirates,2021,SP.DYN.LE00.IN,life_expectancy_years,79.083
+ARE,United Arab Emirates,2022,SP.DYN.LE00.IN,life_expectancy_years,80.487
+ARE,United Arab Emirates,2023,SP.DYN.LE00.IN,life_expectancy_years,82.909
+ARE,United Arab Emirates,2024,SP.DYN.LE00.IN,life_expectancy_years,83.069
+DEU,Germany,2015,NY.GDP.PCAP.CD,gdp_per_capita_usd,41929.7549
+DEU,Germany,2016,NY.GDP.PCAP.CD,gdp_per_capita_usd,42948.9382
+DEU,Germany,2017,NY.GDP.PCAP.CD,gdp_per_capita_usd,45553.9341
+DEU,Germany,2018,NY.GDP.PCAP.CD,gdp_per_capita_usd,48916.1687
+DEU,Germany,2019,NY.GDP.PCAP.CD,gdp_per_capita_usd,47656.1997
+DEU,Germany,2020,NY.GDP.PCAP.CD,gdp_per_capita_usd,47394.8735
+DEU,Germany,2021,NY.GDP.PCAP.CD,gdp_per_capita_usd,52349.246
+DEU,Germany,2022,NY.GDP.PCAP.CD,gdp_per_capita_usd,50506.518
+DEU,Germany,2023,NY.GDP.PCAP.CD,gdp_per_capita_usd,54776.7668
+DEU,Germany,2024,NY.GDP.PCAP.CD,gdp_per_capita_usd,56103.7323
+DEU,Germany,2015,SH.MED.BEDS.ZS,hospital_beds_per_1000,8.09
+DEU,Germany,2016,SH.MED.BEDS.ZS,hospital_beds_per_1000,8.02
+DEU,Germany,2017,SH.MED.BEDS.ZS,hospital_beds_per_1000,7.96
+DEU,Germany,2018,SH.MED.BEDS.ZS,hospital_beds_per_1000,7.94
+DEU,Germany,2019,SH.MED.BEDS.ZS,hospital_beds_per_1000,7.87
+DEU,Germany,2020,SH.MED.BEDS.ZS,hospital_beds_per_1000,7.77
+DEU,Germany,2021,SH.MED.BEDS.ZS,hospital_beds_per_1000,7.71
+DEU,Germany,2022,SH.MED.BEDS.ZS,hospital_beds_per_1000,7.64
+DEU,Germany,2023,SH.MED.BEDS.ZS,hospital_beds_per_1000,7.55
+DEU,Germany,2024,SH.MED.BEDS.ZS,hospital_beds_per_1000,
+DEU,Germany,2015,SH.MED.PHYS.ZS,physicians_per_1000,4.12
+DEU,Germany,2016,SH.MED.PHYS.ZS,physicians_per_1000,4.166
+DEU,Germany,2017,SH.MED.PHYS.ZS,physicians_per_1000,4.226
+DEU,Germany,2018,SH.MED.PHYS.ZS,physicians_per_1000,4.287
+DEU,Germany,2019,SH.MED.PHYS.ZS,physicians_per_1000,4.373
+DEU,Germany,2020,SH.MED.PHYS.ZS,physicians_per_1000,4.443
+DEU,Germany,2021,SH.MED.PHYS.ZS,physicians_per_1000,4.503
+DEU,Germany,2022,SH.MED.PHYS.ZS,physicians_per_1000,4.534
+DEU,Germany,2023,SH.MED.PHYS.ZS,physicians_per_1000,
+DEU,Germany,2024,SH.MED.PHYS.ZS,physicians_per_1000,
+DEU,Germany,2015,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,10.9232
+DEU,Germany,2016,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,10.9713
+DEU,Germany,2017,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,11.0509
+DEU,Germany,2018,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,11.1838
+DEU,Germany,2019,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,11.4281
+DEU,Germany,2020,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,12.4678
+DEU,Germany,2021,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,12.724
+DEU,Germany,2022,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,12.4471
+DEU,Germany,2023,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,11.7443
+DEU,Germany,2024,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,12.2666
+DEU,Germany,2015,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,4605.5903
+DEU,Germany,2016,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,4723.3242
+DEU,Germany,2017,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,5039.353
+DEU,Germany,2018,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,5473.5571
+DEU,Germany,2019,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,5447.3179
+DEU,Germany,2020,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,5906.8062
+DEU,Germany,2021,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,6653.5835
+DEU,Germany,2022,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,6226.1421
+DEU,Germany,2023,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,6394.6226
+DEU,Germany,2024,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,6849.2637
+DEU,Germany,2015,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,12.351
+DEU,Germany,2016,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,12.1854
+DEU,Germany,2017,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,12.0171
+DEU,Germany,2018,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,12.1757
+DEU,Germany,2019,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,12.3755
+DEU,Germany,2020,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,11.338
+DEU,Germany,2021,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,11.3633
+DEU,Germany,2022,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,10.432
+DEU,Germany,2023,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,11.0529
+DEU,Germany,2024,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,10.7067
+DEU,Germany,2015,SP.DYN.IMRT.IN,infant_mortality_per_1000,3.3
+DEU,Germany,2016,SP.DYN.IMRT.IN,infant_mortality_per_1000,3.3
+DEU,Germany,2017,SP.DYN.IMRT.IN,infant_mortality_per_1000,3.2
+DEU,Germany,2018,SP.DYN.IMRT.IN,infant_mortality_per_1000,3.2
+DEU,Germany,2019,SP.DYN.IMRT.IN,infant_mortality_per_1000,3.1
+DEU,Germany,2020,SP.DYN.IMRT.IN,infant_mortality_per_1000,3.1
+DEU,Germany,2021,SP.DYN.IMRT.IN,infant_mortality_per_1000,3.1
+DEU,Germany,2022,SP.DYN.IMRT.IN,infant_mortality_per_1000,3.1
+DEU,Germany,2023,SP.DYN.IMRT.IN,infant_mortality_per_1000,3.1
+DEU,Germany,2024,SP.DYN.IMRT.IN,infant_mortality_per_1000,3.1
+DEU,Germany,2015,SP.DYN.LE00.IN,life_expectancy_years,80.6415
+DEU,Germany,2016,SP.DYN.LE00.IN,life_expectancy_years,80.9902
+DEU,Germany,2017,SP.DYN.LE00.IN,life_expectancy_years,80.9927
+DEU,Germany,2018,SP.DYN.LE00.IN,life_expectancy_years,80.8927
+DEU,Germany,2019,SP.DYN.LE00.IN,life_expectancy_years,81.2927
+DEU,Germany,2020,SP.DYN.LE00.IN,life_expectancy_years,81.0415
+DEU,Germany,2021,SP.DYN.LE00.IN,life_expectancy_years,80.7902
+DEU,Germany,2022,SP.DYN.LE00.IN,life_expectancy_years,80.608
+DEU,Germany,2023,SP.DYN.LE00.IN,life_expectancy_years,81.0415
+DEU,Germany,2024,SP.DYN.LE00.IN,life_expectancy_years,80.7927
+IND,India,2015,NY.GDP.PCAP.CD,gdp_per_capita_usd,1583.9982
+IND,India,2016,NY.GDP.PCAP.CD,gdp_per_capita_usd,1707.5089
+IND,India,2017,NY.GDP.PCAP.CD,gdp_per_capita_usd,1950.1047
+IND,India,2018,NY.GDP.PCAP.CD,gdp_per_capita_usd,1966.2546
+IND,India,2019,NY.GDP.PCAP.CD,gdp_per_capita_usd,2041.4286
+IND,India,2020,NY.GDP.PCAP.CD,gdp_per_capita_usd,1907.0425
+IND,India,2021,NY.GDP.PCAP.CD,gdp_per_capita_usd,2239.6138
+IND,India,2022,NY.GDP.PCAP.CD,gdp_per_capita_usd,2279.9815
+IND,India,2023,NY.GDP.PCAP.CD,gdp_per_capita_usd,2434.4483
+IND,India,2024,NY.GDP.PCAP.CD,gdp_per_capita_usd,2591.9917
+IND,India,2015,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.7
+IND,India,2016,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.68
+IND,India,2017,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.66
+IND,India,2018,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.64
+IND,India,2019,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.62
+IND,India,2020,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.61
+IND,India,2021,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.59
+IND,India,2022,SH.MED.BEDS.ZS,hospital_beds_per_1000,
+IND,India,2023,SH.MED.BEDS.ZS,hospital_beds_per_1000,
+IND,India,2024,SH.MED.BEDS.ZS,hospital_beds_per_1000,
+IND,India,2015,SH.MED.PHYS.ZS,physicians_per_1000,0.723
+IND,India,2016,SH.MED.PHYS.ZS,physicians_per_1000,0.748
+IND,India,2017,SH.MED.PHYS.ZS,physicians_per_1000,0.766
+IND,India,2018,SH.MED.PHYS.ZS,physicians_per_1000,0.84
+IND,India,2019,SH.MED.PHYS.ZS,physicians_per_1000,0.889
+IND,India,2020,SH.MED.PHYS.ZS,physicians_per_1000,0.723
+IND,India,2021,SH.MED.PHYS.ZS,physicians_per_1000,
+IND,India,2022,SH.MED.PHYS.ZS,physicians_per_1000,
+IND,India,2023,SH.MED.PHYS.ZS,physicians_per_1000,
+IND,India,2024,SH.MED.PHYS.ZS,physicians_per_1000,
+IND,India,2015,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.5957
+IND,India,2016,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.5043
+IND,India,2017,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,2.936
+IND,India,2018,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,2.8585
+IND,India,2019,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,2.953
+IND,India,2020,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.3415
+IND,India,2021,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.3468
+IND,India,2022,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.3962
+IND,India,2023,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.3394
+IND,India,2024,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,
+IND,India,2015,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,58.124
+IND,India,2016,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,59.7265
+IND,India,2017,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,56.6684
+IND,India,2018,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,57.4655
+IND,India,2019,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,60.6914
+IND,India,2020,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,63.831
+IND,India,2021,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,75.5497
+IND,India,2022,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,81.5089
+IND,India,2023,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,84.6867
+IND,India,2024,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,
+IND,India,2015,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,64.6644
+IND,India,2016,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,63.2062
+IND,India,2017,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,55.1125
+IND,India,2018,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,53.2299
+IND,India,2019,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,52.0042
+IND,India,2020,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,49.5109
+IND,India,2021,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,45.1091
+IND,India,2022,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,44.5413
+IND,India,2023,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,43.8851
+IND,India,2024,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,
+IND,India,2015,SP.DYN.IMRT.IN,infant_mortality_per_1000,36.3
+IND,India,2016,SP.DYN.IMRT.IN,infant_mortality_per_1000,34.6
+IND,India,2017,SP.DYN.IMRT.IN,infant_mortality_per_1000,32.9
+IND,India,2018,SP.DYN.IMRT.IN,infant_mortality_per_1000,31.3
+IND,India,2019,SP.DYN.IMRT.IN,infant_mortality_per_1000,29.8
+IND,India,2020,SP.DYN.IMRT.IN,infant_mortality_per_1000,28.3
+IND,India,2021,SP.DYN.IMRT.IN,infant_mortality_per_1000,27.0
+IND,India,2022,SP.DYN.IMRT.IN,infant_mortality_per_1000,25.7
+IND,India,2023,SP.DYN.IMRT.IN,infant_mortality_per_1000,24.5
+IND,India,2024,SP.DYN.IMRT.IN,infant_mortality_per_1000,23.3
+IND,India,2015,SP.DYN.LE00.IN,life_expectancy_years,69.326
+IND,India,2016,SP.DYN.LE00.IN,life_expectancy_years,69.709
+IND,India,2017,SP.DYN.LE00.IN,life_expectancy_years,70.068
+IND,India,2018,SP.DYN.LE00.IN,life_expectancy_years,70.415
+IND,India,2019,SP.DYN.LE00.IN,life_expectancy_years,70.746
+IND,India,2020,SP.DYN.LE00.IN,life_expectancy_years,70.156
+IND,India,2021,SP.DYN.LE00.IN,life_expectancy_years,67.282
+IND,India,2022,SP.DYN.LE00.IN,life_expectancy_years,71.698
+IND,India,2023,SP.DYN.LE00.IN,life_expectancy_years,72.003
+IND,India,2024,SP.DYN.LE00.IN,life_expectancy_years,72.235
+SGP,Singapore,2015,NY.GDP.PCAP.CD,gdp_per_capita_usd,55645.6069
+SGP,Singapore,2016,NY.GDP.PCAP.CD,gdp_per_capita_usd,57204.034
+SGP,Singapore,2017,NY.GDP.PCAP.CD,gdp_per_capita_usd,61436.1326
+SGP,Singapore,2018,NY.GDP.PCAP.CD,gdp_per_capita_usd,67032.8226
+SGP,Singapore,2019,NY.GDP.PCAP.CD,gdp_per_capita_usd,66068.7003
+SGP,Singapore,2020,NY.GDP.PCAP.CD,gdp_per_capita_usd,61772.5036
+SGP,Singapore,2021,NY.GDP.PCAP.CD,gdp_per_capita_usd,80884.8565
+SGP,Singapore,2022,NY.GDP.PCAP.CD,gdp_per_capita_usd,91227.697
+SGP,Singapore,2023,NY.GDP.PCAP.CD,gdp_per_capita_usd,86382.59
+SGP,Singapore,2024,NY.GDP.PCAP.CD,gdp_per_capita_usd,94896.5621
+SGP,Singapore,2015,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.4
+SGP,Singapore,2016,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.5
+SGP,Singapore,2017,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.49
+SGP,Singapore,2018,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.58
+SGP,Singapore,2019,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.69
+SGP,Singapore,2020,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.77
+SGP,Singapore,2021,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.84
+SGP,Singapore,2022,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.83
+SGP,Singapore,2023,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.81
+SGP,Singapore,2024,SH.MED.BEDS.ZS,hospital_beds_per_1000,
+SGP,Singapore,2015,SH.MED.PHYS.ZS,physicians_per_1000,2.255
+SGP,Singapore,2016,SH.MED.PHYS.ZS,physicians_per_1000,2.325
+SGP,Singapore,2017,SH.MED.PHYS.ZS,physicians_per_1000,2.389
+SGP,Singapore,2018,SH.MED.PHYS.ZS,physicians_per_1000,2.443
+SGP,Singapore,2019,SH.MED.PHYS.ZS,physicians_per_1000,2.519
+SGP,Singapore,2020,SH.MED.PHYS.ZS,physicians_per_1000,2.638
+SGP,Singapore,2021,SH.MED.PHYS.ZS,physicians_per_1000,2.781
+SGP,Singapore,2022,SH.MED.PHYS.ZS,physicians_per_1000,2.834
+SGP,Singapore,2023,SH.MED.PHYS.ZS,physicians_per_1000,
+SGP,Singapore,2024,SH.MED.PHYS.ZS,physicians_per_1000,
+SGP,Singapore,2015,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.1806
+SGP,Singapore,2016,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.3799
+SGP,Singapore,2017,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.3598
+SGP,Singapore,2018,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.0728
+SGP,Singapore,2019,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.4075
+SGP,Singapore,2020,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,5.7002
+SGP,Singapore,2021,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,5.146
+SGP,Singapore,2022,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.3312
+SGP,Singapore,2023,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.4916
+SGP,Singapore,2024,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,
+SGP,Singapore,2015,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,2330.396
+SGP,Singapore,2016,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,2509.9216
+SGP,Singapore,2017,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,2673.6621
+SGP,Singapore,2018,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,2726.0068
+SGP,Singapore,2019,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,2924.2471
+SGP,Singapore,2020,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,3541.3645
+SGP,Singapore,2021,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,4050.8105
+SGP,Singapore,2022,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,3902.1443
+SGP,Singapore,2023,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,3921.6025
+SGP,Singapore,2024,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,
+SGP,Singapore,2015,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,33.0861
+SGP,Singapore,2016,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,32.6235
+SGP,Singapore,2017,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,32.0623
+SGP,Singapore,2018,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,29.0965
+SGP,Singapore,2019,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,28.3906
+SGP,Singapore,2020,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,24.3582
+SGP,Singapore,2021,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,23.4694
+SGP,Singapore,2022,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,23.4841
+SGP,Singapore,2023,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,25.4185
+SGP,Singapore,2024,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,
+SGP,Singapore,2015,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.2
+SGP,Singapore,2016,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.1
+SGP,Singapore,2017,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.1
+SGP,Singapore,2018,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.0
+SGP,Singapore,2019,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.0
+SGP,Singapore,2020,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.0
+SGP,Singapore,2021,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.0
+SGP,Singapore,2022,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.0
+SGP,Singapore,2023,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.1
+SGP,Singapore,2024,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.2
+SGP,Singapore,2015,SP.DYN.LE00.IN,life_expectancy_years,82.7439
+SGP,Singapore,2016,SP.DYN.LE00.IN,life_expectancy_years,82.8463
+SGP,Singapore,2017,SP.DYN.LE00.IN,life_expectancy_years,83.0951
+SGP,Singapore,2018,SP.DYN.LE00.IN,life_expectancy_years,83.2976
+SGP,Singapore,2019,SP.DYN.LE00.IN,life_expectancy_years,83.5951
+SGP,Singapore,2020,SP.DYN.LE00.IN,life_expectancy_years,83.5439
+SGP,Singapore,2021,SP.DYN.LE00.IN,life_expectancy_years,83.0927
+SGP,Singapore,2022,SP.DYN.LE00.IN,life_expectancy_years,82.8951
+SGP,Singapore,2023,SP.DYN.LE00.IN,life_expectancy_years,83.0976
+SGP,Singapore,2024,SP.DYN.LE00.IN,life_expectancy_years,83.3463
+SWE,Sweden,2015,NY.GDP.PCAP.CD,gdp_per_capita_usd,51188.1652
+SWE,Sweden,2016,NY.GDP.PCAP.CD,gdp_per_capita_usd,51703.5088
+SWE,Sweden,2017,NY.GDP.PCAP.CD,gdp_per_capita_usd,53210.2233
+SWE,Sweden,2018,NY.GDP.PCAP.CD,gdp_per_capita_usd,54018.4554
+SWE,Sweden,2019,NY.GDP.PCAP.CD,gdp_per_capita_usd,51648.9893
+SWE,Sweden,2020,NY.GDP.PCAP.CD,gdp_per_capita_usd,52568.5727
+SWE,Sweden,2021,NY.GDP.PCAP.CD,gdp_per_capita_usd,60647.5416
+SWE,Sweden,2022,NY.GDP.PCAP.CD,gdp_per_capita_usd,54836.8907
+SWE,Sweden,2023,NY.GDP.PCAP.CD,gdp_per_capita_usd,54950.2835
+SWE,Sweden,2024,NY.GDP.PCAP.CD,gdp_per_capita_usd,57222.7101
+SWE,Sweden,2015,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.44
+SWE,Sweden,2016,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.34
+SWE,Sweden,2017,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.21
+SWE,Sweden,2018,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.13
+SWE,Sweden,2019,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.07
+SWE,Sweden,2020,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.05
+SWE,Sweden,2021,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.0
+SWE,Sweden,2022,SH.MED.BEDS.ZS,hospital_beds_per_1000,1.9
+SWE,Sweden,2023,SH.MED.BEDS.ZS,hospital_beds_per_1000,
+SWE,Sweden,2024,SH.MED.BEDS.ZS,hospital_beds_per_1000,
+SWE,Sweden,2015,SH.MED.PHYS.ZS,physicians_per_1000,4.174
+SWE,Sweden,2016,SH.MED.PHYS.ZS,physicians_per_1000,4.233
+SWE,Sweden,2017,SH.MED.PHYS.ZS,physicians_per_1000,4.269
+SWE,Sweden,2018,SH.MED.PHYS.ZS,physicians_per_1000,4.322
+SWE,Sweden,2019,SH.MED.PHYS.ZS,physicians_per_1000,4.288
+SWE,Sweden,2020,SH.MED.PHYS.ZS,physicians_per_1000,4.322
+SWE,Sweden,2021,SH.MED.PHYS.ZS,physicians_per_1000,4.408
+SWE,Sweden,2022,SH.MED.PHYS.ZS,physicians_per_1000,
+SWE,Sweden,2023,SH.MED.PHYS.ZS,physicians_per_1000,
+SWE,Sweden,2024,SH.MED.PHYS.ZS,physicians_per_1000,
+SWE,Sweden,2015,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,10.9307
+SWE,Sweden,2016,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,10.9569
+SWE,Sweden,2017,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,10.9473
+SWE,Sweden,2018,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,11.0913
+SWE,Sweden,2019,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,10.9344
+SWE,Sweden,2020,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,11.4246
+SWE,Sweden,2021,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,11.2301
+SWE,Sweden,2022,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,10.8551
+SWE,Sweden,2023,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,11.1529
+SWE,Sweden,2024,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,11.2151
+SWE,Sweden,2015,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,5626.0483
+SWE,Sweden,2016,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,5719.46
+SWE,Sweden,2017,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,5871.5229
+SWE,Sweden,2018,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,6042.1353
+SWE,Sweden,2019,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,5688.0449
+SWE,Sweden,2020,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,6030.5327
+SWE,Sweden,2021,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,6894.2017
+SWE,Sweden,2022,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,6022.3926
+SWE,Sweden,2023,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,6206.2305
+SWE,Sweden,2024,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,6484.7646
+SWE,Sweden,2015,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,15.0316
+SWE,Sweden,2016,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,14.6334
+SWE,Sweden,2017,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,14.2365
+SWE,Sweden,2018,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,14.2195
+SWE,Sweden,2019,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,13.9244
+SWE,Sweden,2020,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,12.9203
+SWE,Sweden,2021,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,13.0928
+SWE,Sweden,2022,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,13.13
+SWE,Sweden,2023,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,12.9575
+SWE,Sweden,2024,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,13.3814
+SWE,Sweden,2015,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.3
+SWE,Sweden,2016,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.3
+SWE,Sweden,2017,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.3
+SWE,Sweden,2018,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.2
+SWE,Sweden,2019,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.2
+SWE,Sweden,2020,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.1
+SWE,Sweden,2021,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.1
+SWE,Sweden,2022,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.0
+SWE,Sweden,2023,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.0
+SWE,Sweden,2024,SP.DYN.IMRT.IN,infant_mortality_per_1000,2.0
+SWE,Sweden,2015,SP.DYN.LE00.IN,life_expectancy_years,82.2049
+SWE,Sweden,2016,SP.DYN.LE00.IN,life_expectancy_years,82.3073
+SWE,Sweden,2017,SP.DYN.LE00.IN,life_expectancy_years,82.4098
+SWE,Sweden,2018,SP.DYN.LE00.IN,life_expectancy_years,82.5585
+SWE,Sweden,2019,SP.DYN.LE00.IN,life_expectancy_years,83.1098
+SWE,Sweden,2020,SP.DYN.LE00.IN,life_expectancy_years,82.3561
+SWE,Sweden,2021,SP.DYN.LE00.IN,life_expectancy_years,83.0561
+SWE,Sweden,2022,SP.DYN.LE00.IN,life_expectancy_years,83.0585
+SWE,Sweden,2023,SP.DYN.LE00.IN,life_expectancy_years,83.3098
+SWE,Sweden,2024,SP.DYN.LE00.IN,life_expectancy_years,84.0634
+THA,Thailand,2015,NY.GDP.PCAP.CD,gdp_per_capita_usd,5688.8534
+THA,Thailand,2016,NY.GDP.PCAP.CD,gdp_per_capita_usd,5833.5772
+THA,Thailand,2017,NY.GDP.PCAP.CD,gdp_per_capita_usd,6413.0918
+THA,Thailand,2018,NY.GDP.PCAP.CD,gdp_per_capita_usd,7099.7765
+THA,Thailand,2019,NY.GDP.PCAP.CD,gdp_per_capita_usd,7605.6966
+THA,Thailand,2020,NY.GDP.PCAP.CD,gdp_per_capita_usd,6983.0341
+THA,Thailand,2021,NY.GDP.PCAP.CD,gdp_per_capita_usd,7055.1876
+THA,Thailand,2022,NY.GDP.PCAP.CD,gdp_per_capita_usd,6910.01
+THA,Thailand,2023,NY.GDP.PCAP.CD,gdp_per_capita_usd,7210.5413
+THA,Thailand,2024,NY.GDP.PCAP.CD,gdp_per_capita_usd,7386.6362
+THA,Thailand,2015,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.13
+THA,Thailand,2016,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.0
+THA,Thailand,2017,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.12
+THA,Thailand,2018,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.1
+THA,Thailand,2019,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.21
+THA,Thailand,2020,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.32
+THA,Thailand,2021,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.34
+THA,Thailand,2022,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.39
+THA,Thailand,2023,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.39
+THA,Thailand,2024,SH.MED.BEDS.ZS,hospital_beds_per_1000,
+THA,Thailand,2015,SH.MED.PHYS.ZS,physicians_per_1000,0.453
+THA,Thailand,2016,SH.MED.PHYS.ZS,physicians_per_1000,0.433
+THA,Thailand,2017,SH.MED.PHYS.ZS,physicians_per_1000,0.788
+THA,Thailand,2018,SH.MED.PHYS.ZS,physicians_per_1000,0.518
+THA,Thailand,2019,SH.MED.PHYS.ZS,physicians_per_1000,0.548
+THA,Thailand,2020,SH.MED.PHYS.ZS,physicians_per_1000,0.509
+THA,Thailand,2021,SH.MED.PHYS.ZS,physicians_per_1000,0.541
+THA,Thailand,2022,SH.MED.PHYS.ZS,physicians_per_1000,
+THA,Thailand,2023,SH.MED.PHYS.ZS,physicians_per_1000,
+THA,Thailand,2024,SH.MED.PHYS.ZS,physicians_per_1000,
+THA,Thailand,2015,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.8523
+THA,Thailand,2016,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.939
+THA,Thailand,2017,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.8528
+THA,Thailand,2018,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.8704
+THA,Thailand,2019,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.7891
+THA,Thailand,2020,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.3572
+THA,Thailand,2021,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,5.154
+THA,Thailand,2022,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,5.3547
+THA,Thailand,2023,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.5379
+THA,Thailand,2024,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,
+THA,Thailand,2015,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,219.1509
+THA,Thailand,2016,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,229.785
+THA,Thailand,2017,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,247.0815
+THA,Thailand,2018,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,274.7122
+THA,Thailand,2019,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,288.311
+THA,Thailand,2020,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,304.3818
+THA,Thailand,2021,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,363.7285
+THA,Thailand,2022,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,369.9765
+THA,Thailand,2023,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,326.5048
+THA,Thailand,2024,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,
+THA,Thailand,2015,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,11.9106
+THA,Thailand,2016,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,10.813
+THA,Thailand,2017,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,11.8379
+THA,Thailand,2018,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,10.1111
+THA,Thailand,2019,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,8.6696
+THA,Thailand,2020,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,10.5428
+THA,Thailand,2021,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,9.0445
+THA,Thailand,2022,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,9.2116
+THA,Thailand,2023,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,9.934
+THA,Thailand,2024,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,
+THA,Thailand,2015,SP.DYN.IMRT.IN,infant_mortality_per_1000,10.1
+THA,Thailand,2016,SP.DYN.IMRT.IN,infant_mortality_per_1000,9.8
+THA,Thailand,2017,SP.DYN.IMRT.IN,infant_mortality_per_1000,9.5
+THA,Thailand,2018,SP.DYN.IMRT.IN,infant_mortality_per_1000,9.2
+THA,Thailand,2019,SP.DYN.IMRT.IN,infant_mortality_per_1000,8.9
+THA,Thailand,2020,SP.DYN.IMRT.IN,infant_mortality_per_1000,8.7
+THA,Thailand,2021,SP.DYN.IMRT.IN,infant_mortality_per_1000,8.4
+THA,Thailand,2022,SP.DYN.IMRT.IN,infant_mortality_per_1000,8.2
+THA,Thailand,2023,SP.DYN.IMRT.IN,infant_mortality_per_1000,7.9
+THA,Thailand,2024,SP.DYN.IMRT.IN,infant_mortality_per_1000,7.7
+THA,Thailand,2015,SP.DYN.LE00.IN,life_expectancy_years,76.563
+THA,Thailand,2016,SP.DYN.LE00.IN,life_expectancy_years,76.769
+THA,Thailand,2017,SP.DYN.LE00.IN,life_expectancy_years,76.989
+THA,Thailand,2018,SP.DYN.LE00.IN,life_expectancy_years,77.19
+THA,Thailand,2019,SP.DYN.LE00.IN,life_expectancy_years,77.197
+THA,Thailand,2020,SP.DYN.LE00.IN,life_expectancy_years,77.331
+THA,Thailand,2021,SP.DYN.LE00.IN,life_expectancy_years,77.606
+THA,Thailand,2022,SP.DYN.LE00.IN,life_expectancy_years,75.291
+THA,Thailand,2023,SP.DYN.LE00.IN,life_expectancy_years,76.412
+THA,Thailand,2024,SP.DYN.LE00.IN,life_expectancy_years,76.564
+TUR,Turkey,2015,NY.GDP.PCAP.CD,gdp_per_capita_usd,11064.6495
+TUR,Turkey,2016,NY.GDP.PCAP.CD,gdp_per_capita_usd,10984.3643
+TUR,Turkey,2017,NY.GDP.PCAP.CD,gdp_per_capita_usd,10756.3878
+TUR,Turkey,2018,NY.GDP.PCAP.CD,gdp_per_capita_usd,9684.1182
+TUR,Turkey,2019,NY.GDP.PCAP.CD,gdp_per_capita_usd,9395.2338
+TUR,Turkey,2020,NY.GDP.PCAP.CD,gdp_per_capita_usd,8798.1179
+TUR,Turkey,2021,NY.GDP.PCAP.CD,gdp_per_capita_usd,9981.764
+TUR,Turkey,2022,NY.GDP.PCAP.CD,gdp_per_capita_usd,10897.8398
+TUR,Turkey,2023,NY.GDP.PCAP.CD,gdp_per_capita_usd,13375.0947
+TUR,Turkey,2024,NY.GDP.PCAP.CD,gdp_per_capita_usd,15892.7157
+TUR,Turkey,2015,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.62
+TUR,Turkey,2016,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.67
+TUR,Turkey,2017,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.72
+TUR,Turkey,2018,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.75
+TUR,Turkey,2019,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.78
+TUR,Turkey,2020,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.92
+TUR,Turkey,2021,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.94
+TUR,Turkey,2022,SH.MED.BEDS.ZS,hospital_beds_per_1000,3.01
+TUR,Turkey,2023,SH.MED.BEDS.ZS,hospital_beds_per_1000,3.05
+TUR,Turkey,2024,SH.MED.BEDS.ZS,hospital_beds_per_1000,
+TUR,Turkey,2015,SH.MED.PHYS.ZS,physicians_per_1000,1.765
+TUR,Turkey,2016,SH.MED.PHYS.ZS,physicians_per_1000,1.774
+TUR,Turkey,2017,SH.MED.PHYS.ZS,physicians_per_1000,1.805
+TUR,Turkey,2018,SH.MED.PHYS.ZS,physicians_per_1000,1.814
+TUR,Turkey,2019,SH.MED.PHYS.ZS,physicians_per_1000,1.884
+TUR,Turkey,2020,SH.MED.PHYS.ZS,physicians_per_1000,1.989
+TUR,Turkey,2021,SH.MED.PHYS.ZS,physicians_per_1000,2.118
+TUR,Turkey,2022,SH.MED.PHYS.ZS,physicians_per_1000,2.236
+TUR,Turkey,2023,SH.MED.PHYS.ZS,physicians_per_1000,
+TUR,Turkey,2024,SH.MED.PHYS.ZS,physicians_per_1000,
+TUR,Turkey,2015,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.1169
+TUR,Turkey,2016,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.2847
+TUR,Turkey,2017,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.1797
+TUR,Turkey,2018,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.121
+TUR,Turkey,2019,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.3595
+TUR,Turkey,2020,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.6164
+TUR,Turkey,2021,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.5607
+TUR,Turkey,2022,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,3.7034
+TUR,Turkey,2023,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,4.2752
+TUR,Turkey,2024,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,
+TUR,Turkey,2015,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,444.708
+TUR,Turkey,2016,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,456.366
+TUR,Turkey,2017,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,432.1375
+TUR,Turkey,2018,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,380.2784
+TUR,Turkey,2019,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,388.6749
+TUR,Turkey,2020,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,386.2594
+TUR,Turkey,2021,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,431.3398
+TUR,Turkey,2022,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,385.88
+TUR,Turkey,2023,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,547.8146
+TUR,Turkey,2024,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,
+TUR,Turkey,2015,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,16.9487
+TUR,Turkey,2016,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,16.4661
+TUR,Turkey,2017,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,17.3842
+TUR,Turkey,2018,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,17.4914
+TUR,Turkey,2019,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,17.0476
+TUR,Turkey,2020,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,16.4306
+TUR,Turkey,2021,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,16.2712
+TUR,Turkey,2022,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,19.4784
+TUR,Turkey,2023,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,19.0472
+TUR,Turkey,2024,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,
+TUR,Turkey,2015,SP.DYN.IMRT.IN,infant_mortality_per_1000,11.0
+TUR,Turkey,2016,SP.DYN.IMRT.IN,infant_mortality_per_1000,10.5
+TUR,Turkey,2017,SP.DYN.IMRT.IN,infant_mortality_per_1000,10.1
+TUR,Turkey,2018,SP.DYN.IMRT.IN,infant_mortality_per_1000,9.7
+TUR,Turkey,2019,SP.DYN.IMRT.IN,infant_mortality_per_1000,9.4
+TUR,Turkey,2020,SP.DYN.IMRT.IN,infant_mortality_per_1000,9.1
+TUR,Turkey,2021,SP.DYN.IMRT.IN,infant_mortality_per_1000,8.8
+TUR,Turkey,2022,SP.DYN.IMRT.IN,infant_mortality_per_1000,8.5
+TUR,Turkey,2023,SP.DYN.IMRT.IN,infant_mortality_per_1000,9.8
+TUR,Turkey,2024,SP.DYN.IMRT.IN,infant_mortality_per_1000,8.0
+TUR,Turkey,2015,SP.DYN.LE00.IN,life_expectancy_years,76.539
+TUR,Turkey,2016,SP.DYN.LE00.IN,life_expectancy_years,76.595
+TUR,Turkey,2017,SP.DYN.LE00.IN,life_expectancy_years,77.037
+TUR,Turkey,2018,SP.DYN.LE00.IN,life_expectancy_years,77.454
+TUR,Turkey,2019,SP.DYN.LE00.IN,life_expectancy_years,77.737
+TUR,Turkey,2020,SP.DYN.LE00.IN,life_expectancy_years,76.525
+TUR,Turkey,2021,SP.DYN.LE00.IN,life_expectancy_years,75.722
+TUR,Turkey,2022,SP.DYN.LE00.IN,life_expectancy_years,77.591
+TUR,Turkey,2023,SP.DYN.LE00.IN,life_expectancy_years,77.156
+TUR,Turkey,2024,SP.DYN.LE00.IN,life_expectancy_years,77.421
+USA,United States,2015,NY.GDP.PCAP.CD,gdp_per_capita_usd,56849.4698
+USA,United States,2016,NY.GDP.PCAP.CD,gdp_per_capita_usd,57976.6282
+USA,United States,2017,NY.GDP.PCAP.CD,gdp_per_capita_usd,60047.7191
+USA,United States,2018,NY.GDP.PCAP.CD,gdp_per_capita_usd,62875.6661
+USA,United States,2019,NY.GDP.PCAP.CD,gdp_per_capita_usd,65227.9566
+USA,United States,2020,NY.GDP.PCAP.CD,gdp_per_capita_usd,64465.2971
+USA,United States,2021,NY.GDP.PCAP.CD,gdp_per_capita_usd,71441.232
+USA,United States,2022,NY.GDP.PCAP.CD,gdp_per_capita_usd,78008.6896
+USA,United States,2023,NY.GDP.PCAP.CD,gdp_per_capita_usd,82586.7848
+USA,United States,2024,NY.GDP.PCAP.CD,gdp_per_capita_usd,86169.6642
+USA,United States,2015,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.75
+USA,United States,2016,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.72
+USA,United States,2017,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.8
+USA,United States,2018,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.76
+USA,United States,2019,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.72
+USA,United States,2020,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.71
+USA,United States,2021,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.7
+USA,United States,2022,SH.MED.BEDS.ZS,hospital_beds_per_1000,2.68
+USA,United States,2023,SH.MED.BEDS.ZS,hospital_beds_per_1000,
+USA,United States,2024,SH.MED.BEDS.ZS,hospital_beds_per_1000,
+USA,United States,2015,SH.MED.PHYS.ZS,physicians_per_1000,
+USA,United States,2016,SH.MED.PHYS.ZS,physicians_per_1000,
+USA,United States,2017,SH.MED.PHYS.ZS,physicians_per_1000,
+USA,United States,2018,SH.MED.PHYS.ZS,physicians_per_1000,2.548
+USA,United States,2019,SH.MED.PHYS.ZS,physicians_per_1000,3.482
+USA,United States,2020,SH.MED.PHYS.ZS,physicians_per_1000,3.518
+USA,United States,2021,SH.MED.PHYS.ZS,physicians_per_1000,3.575
+USA,United States,2022,SH.MED.PHYS.ZS,physicians_per_1000,3.681
+USA,United States,2023,SH.MED.PHYS.ZS,physicians_per_1000,
+USA,United States,2024,SH.MED.PHYS.ZS,physicians_per_1000,
+USA,United States,2015,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,16.4016
+USA,United States,2016,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,16.692
+USA,United States,2017,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,16.6383
+USA,United States,2018,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,16.5131
+USA,United States,2019,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,16.5449
+USA,United States,2020,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,18.516
+USA,United States,2021,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,17.3521
+USA,United States,2022,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,16.5288
+USA,United States,2023,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,16.6941
+USA,United States,2024,SH.XPD.CHEX.GD.ZS,health_spend_pct_gdp,
+USA,United States,2015,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,9200.9316
+USA,United States,2016,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,9535.6006
+USA,United States,2017,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,9822.6064
+USA,United States,2018,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,10180.4824
+USA,United States,2019,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,10550.2207
+USA,United States,2020,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,11648.4951
+USA,United States,2021,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,12080.0732
+USA,United States,2022,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,12586.1963
+USA,United States,2023,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,13473.1934
+USA,United States,2024,SH.XPD.CHEX.PC.CD,health_spend_per_capita_usd,
+USA,United States,2015,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,11.7537
+USA,United States,2016,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,11.626
+USA,United States,2017,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,11.3488
+USA,United States,2018,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,11.3208
+USA,United States,2019,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,11.3087
+USA,United States,2020,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,10.0696
+USA,United States,2021,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,10.7296
+USA,United States,2022,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,10.9688
+USA,United States,2023,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,10.9272
+USA,United States,2024,SH.XPD.OOPC.CH.ZS,out_of_pocket_pct_health_spend,
+USA,United States,2015,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.8
+USA,United States,2016,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.7
+USA,United States,2017,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.6
+USA,United States,2018,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.6
+USA,United States,2019,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.5
+USA,United States,2020,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.5
+USA,United States,2021,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.5
+USA,United States,2022,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.5
+USA,United States,2023,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.5
+USA,United States,2024,SP.DYN.IMRT.IN,infant_mortality_per_1000,5.5
+USA,United States,2015,SP.DYN.LE00.IN,life_expectancy_years,78.6902
+USA,United States,2016,SP.DYN.LE00.IN,life_expectancy_years,78.539
+USA,United States,2017,SP.DYN.LE00.IN,life_expectancy_years,78.539
+USA,United States,2018,SP.DYN.LE00.IN,life_expectancy_years,78.639
+USA,United States,2019,SP.DYN.LE00.IN,life_expectancy_years,78.7878
+USA,United States,2020,SP.DYN.LE00.IN,life_expectancy_years,76.9805
+USA,United States,2021,SP.DYN.LE00.IN,life_expectancy_years,76.3293
+USA,United States,2022,SP.DYN.LE00.IN,life_expectancy_years,77.4341
+USA,United States,2023,SP.DYN.LE00.IN,life_expectancy_years,78.3854
+USA,United States,2024,SP.DYN.LE00.IN,life_expectancy_years,78.8902

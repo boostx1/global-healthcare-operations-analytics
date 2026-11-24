@@ -1,0 +1,13 @@
+procedure_code,procedure_name,specialty,clinical_complexity_score,benchmark_los_days,us_benchmark_cost_usd,eu_benchmark_cost_usd,gcc_benchmark_cost_usd
+PROC-CARD-01,Coronary Artery Bypass Graft (CABG),Cardiology,5,7.0,92000.0,44000.0,38000.0
+PROC-CARD-02,Cardiac Valve Replacement,Cardiology,5,6.5,115000.0,52000.0,46000.0
+PROC-ORTH-01,Total Knee Arthroplasty,Orthopedics,3,3.5,42000.0,21000.0,18500.0
+PROC-ORTH-02,Total Hip Replacement,Orthopedics,3,4.0,45000.0,22500.0,19500.0
+PROC-ORTH-03,Lumbar Spinal Fusion,Orthopedics,4,4.5,68000.0,31000.0,27000.0
+PROC-ONCO-01,Targeted Oncology Resection & Protocol,Oncology,5,6.0,86000.0,41000.0,36000.0
+PROC-BARI-01,Laparoscopic Sleeve Gastrectomy,Bariatrics,2,2.5,22000.0,12500.0,10500.0
+PROC-OPHT-01,Bilateral Cataract & Premium IOL Surgery,Ophthalmology,1,1.0,9500.0,5200.0,4600.0
+PROC-OPHT-02,Wavefront-Guided LASIK Correction,Ophthalmology,1,0.0,5400.0,3400.0,2900.0
+PROC-DENT-01,Full-Arch Zirconia Dental Implants,Dental & Maxillofacial,2,1.0,28000.0,15500.0,12500.0
+PROC-DIAG-01,Executive Whole-Body MRI & Cardiac Workup,Diagnostics,1,1.0,7800.0,4200.0,3600.0
+PROC-NEUR-01,Minimally Invasive Microdiscectomy,Neurosurgery,4,3.0,52000.0,25000.0,22000.0

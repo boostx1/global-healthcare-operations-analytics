@@ -1,0 +1,16 @@
+# Python virtual environments & caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# OS & editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Regenerable binary SQLite warehouse (rebuild cleanly via `python src/run_all.py`)
+data/processed/*.db

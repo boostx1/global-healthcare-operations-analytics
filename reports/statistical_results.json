@@ -1,0 +1,581 @@
+{
+  "jci_readmission_test": {
+    "group1_rate_pct": 7.77,
+    "group1_ci95_pct": [
+      7.05,
+      8.55
+    ],
+    "group1_n": 4905,
+    "group2_rate_pct": 13.97,
+    "group2_ci95_pct": [
+      12.04,
+      16.15
+    ],
+    "group2_n": 1095,
+    "abs_diff_pp": -6.21,
+    "relative_risk_reduction_pct": 44.4,
+    "odds_ratio": 0.519,
+    "z_stat": -6.52,
+    "chi2_stat": 42.509,
+    "p_value": 7.036193849785377e-11,
+    "significant_05": true
+  },
+  "jci_complication_test": {
+    "group1_rate_pct": 9.5,
+    "group1_ci95_pct": [
+      8.71,
+      10.35
+    ],
+    "group1_n": 4905,
+    "group2_rate_pct": 14.25,
+    "group2_ci95_pct": [
+      12.3,
+      16.44
+    ],
+    "group2_n": 1095,
+    "abs_diff_pp": -4.75,
+    "relative_risk_reduction_pct": 33.3,
+    "odds_ratio": 0.632,
+    "z_stat": -4.658,
+    "chi2_stat": 21.7,
+    "p_value": 3.187834018536506e-06,
+    "significant_05": true
+  },
+  "mt_vs_domestic_wait": {
+    "mt_mean_days": 11.83,
+    "mt_median_days": 9.0,
+    "dom_mean_days": 21.11,
+    "dom_median_days": 17.0,
+    "welch_t": -25.193,
+    "welch_p": 1.279744506869275e-127,
+    "mannwhitney_u": 2336718.0,
+    "mannwhitney_p": 1.7237238671916598e-170,
+    "significant_05": true
+  },
+  "outbound_cost_savings": {
+    "cohort": "USA / Sweden / Germany / UAE outbound medical tourists",
+    "n_encounters": 2720,
+    "mean_savings_pct": 13.76,
+    "median_savings_pct": 27.02,
+    "mean_savings_usd": 9003.0,
+    "t_stat_vs_zero": 14.92,
+    "p_value": 1.8177029159329735e-48
+  },
+  "anova_wait_by_country": {
+    "groups": 8,
+    "f_stat": 559.03,
+    "anova_p": 0.0,
+    "kruskal_h": 2259.37,
+    "kruskal_p": 0.0
+  },
+  "anova_satisfaction_by_specialty": {
+    "groups": 8,
+    "f_stat": 23.24,
+    "anova_p": 2.454284406917106e-31,
+    "kruskal_h": 111.31,
+    "kruskal_p": 4.9220885092372604e-21
+  },
+  "correlations": {
+    "wait_time_vs_satisfaction": {
+      "pearson_r": -0.5162,
+      "pearson_p": 0.0,
+      "spearman_rho": -0.4725,
+      "spearman_p": 0.0
+    },
+    "worldbank_spend_vs_life_expectancy": {
+      "n_countries": 8,
+      "spearman_rho": 0.619,
+      "spearman_p": 0.1017330374542646
+    },
+    "worldbank_oop_vs_life_expectancy": {
+      "n_countries": 8,
+      "spearman_rho": -0.1429,
+      "spearman_p": 0.735764859879812
+    }
+  },
+  "ols_patient_satisfaction": {
+    "target": "patient_satisfaction",
+    "n_obs": 5807,
+    "r_squared": 0.6716,
+    "adj_r_squared": 0.6712,
+    "rmse": 0.3039,
+    "f_stat": 1694.33,
+    "f_p_value": 1.1102230246251565e-16,
+    "coefficients": [
+      {
+        "feature": "intercept",
+        "coef": 4.4847,
+        "std_err": 0.0182,
+        "t_stat": 246.518,
+        "p_value": 0.0,
+        "ci95_low": 4.4491,
+        "ci95_high": 4.5204,
+        "std_beta": null
+      },
+      {
+        "feature": "wait_time_days",
+        "coef": -0.0183,
+        "std_err": 0.0003,
+        "t_stat": -56.71,
+        "p_value": 0.0,
+        "ci95_low": -0.0189,
+        "ci95_high": -0.0177,
+        "std_beta": -0.4435
+      },
+      {
+        "feature": "complication_flag",
+        "coef": -0.7395,
+        "std_err": 0.0138,
+        "t_stat": -53.431,
+        "p_value": 0.0,
+        "ci95_low": -0.7666,
+        "ci95_high": -0.7123,
+        "std_beta": -0.4244
+      },
+      {
+        "feature": "readmission_30d_flag",
+        "coef": -0.5605,
+        "std_err": 0.0147,
+        "t_stat": -38.019,
+        "p_value": 0.0,
+        "ci95_low": -0.5894,
+        "ci95_high": -0.5316,
+        "std_beta": -0.2997
+      },
+      {
+        "feature": "jci_accredited",
+        "coef": 0.2445,
+        "std_err": 0.0133,
+        "t_stat": 18.386,
+        "p_value": 0.0,
+        "ci95_low": 0.2184,
+        "ci95_high": 0.2706,
+        "std_beta": 0.1784
+      },
+      {
+        "feature": "intl_patient_desk",
+        "coef": 0.1356,
+        "std_err": 0.0191,
+        "t_stat": 7.089,
+        "p_value": 1.5121237595394632e-12,
+        "ci95_low": 0.0981,
+        "ci95_high": 0.1731,
+        "std_beta": 0.0699
+      },
+      {
+        "feature": "clinical_complexity_score",
+        "coef": 0.0037,
+        "std_err": 0.0029,
+        "t_stat": 1.283,
+        "p_value": 0.19956328243003663,
+        "ci95_low": -0.002,
+        "ci95_high": 0.0094,
+        "std_beta": 0.0099
+      },
+      {
+        "feature": "comorbidity_index",
+        "coef": -0.0038,
+        "std_err": 0.0031,
+        "t_stat": -1.254,
+        "p_value": 0.20978945451547037,
+        "ci95_low": -0.0098,
+        "ci95_high": 0.0022,
+        "std_beta": -0.0096
+      }
+    ]
+  },
+  "ols_length_of_stay": {
+    "target": "length_of_stay_days",
+    "n_obs": 6000,
+    "r_squared": 0.9233,
+    "adj_r_squared": 0.9233,
+    "rmse": 0.6814,
+    "f_stat": 14438.94,
+    "f_p_value": 1.1102230246251565e-16,
+    "coefficients": [
+      {
+        "feature": "intercept",
+        "coef": 0.3471,
+        "std_err": 0.1816,
+        "t_stat": 1.912,
+        "p_value": 0.055940943611674676,
+        "ci95_low": -0.0088,
+        "ci95_high": 0.7031,
+        "std_beta": null
+      },
+      {
+        "feature": "benchmark_los_days",
+        "coef": 0.9889,
+        "std_err": 0.0043,
+        "t_stat": 229.998,
+        "p_value": 0.0,
+        "ci95_low": 0.9804,
+        "ci95_high": 0.9973,
+        "std_beta": 0.8362
+      },
+      {
+        "feature": "complication_flag",
+        "coef": 2.4053,
+        "std_err": 0.0297,
+        "t_stat": 80.871,
+        "p_value": 0.0,
+        "ci95_low": 2.347,
+        "ci95_high": 2.4637,
+        "std_beta": 0.2979
+      },
+      {
+        "feature": "comorbidity_index",
+        "coef": 0.3109,
+        "std_err": 0.0067,
+        "t_stat": 46.43,
+        "p_value": 0.0,
+        "ci95_low": 0.2978,
+        "ci95_high": 0.324,
+        "std_beta": 0.1679
+      },
+      {
+        "feature": "jci_accredited",
+        "coef": -0.2238,
+        "std_err": 0.0243,
+        "t_stat": -9.21,
+        "p_value": 0.0,
+        "ci95_low": -0.2714,
+        "ci95_high": -0.1761,
+        "std_beta": -0.0351
+      },
+      {
+        "feature": "avg_bed_occupancy_pct",
+        "coef": -0.0031,
+        "std_err": 0.0021,
+        "t_stat": -1.461,
+        "p_value": 0.14408856435873085,
+        "ci95_low": -0.0072,
+        "ci95_high": 0.0011,
+        "std_beta": -0.0056
+      }
+    ]
+  },
+  "billing_outlier_audit": {
+    "total_flagged": 421,
+    "pct_of_encounters": 7.02,
+    "pct_outliers_with_complication": 21.9,
+    "top_5_examples": [
+      {
+        "encounter_id": "ENC-000227",
+        "hospital_name": "Atlantic Academic Medical Center",
+        "dest_country": "USA",
+        "procedure_code": "PROC-DENT-01",
+        "procedure_cost_usd": 43882.38,
+        "upper_iqr_threshold": 27881.79,
+        "z_score": 4.47,
+        "complication_flag": 1
+      },
+      {
+        "encounter_id": "ENC-001973",
+        "hospital_name": "Pacific Precision Surgical Hospital",
+        "dest_country": "USA",
+        "procedure_code": "PROC-ORTH-03",
+        "procedure_cost_usd": 116883.39,
+        "upper_iqr_threshold": 68979.39,
+        "z_score": 4.39,
+        "complication_flag": 1
+      },
+      {
+        "encounter_id": "ENC-004273",
+        "hospital_name": "Atlantic Academic Medical Center",
+        "dest_country": "USA",
+        "procedure_code": "PROC-ORTH-03",
+        "procedure_cost_usd": 113250.55,
+        "upper_iqr_threshold": 68979.39,
+        "z_score": 4.2,
+        "complication_flag": 1
+      },
+      {
+        "encounter_id": "ENC-003724",
+        "hospital_name": "Atlantic Academic Medical Center",
+        "dest_country": "USA",
+        "procedure_code": "PROC-NEUR-01",
+        "procedure_cost_usd": 81035.27,
+        "upper_iqr_threshold": 54518.12,
+        "z_score": 4.18,
+        "complication_flag": 1
+      },
+      {
+        "encounter_id": "ENC-001224",
+        "hospital_name": "Atlantic Academic Medical Center",
+        "dest_country": "USA",
+        "procedure_code": "PROC-ORTH-02",
+        "procedure_cost_usd": 72755.8,
+        "upper_iqr_threshold": 48155.61,
+        "z_score": 4.12,
+        "complication_flag": 1
+      }
+    ]
+  },
+  "hospital_bootstrap_ci": [
+    {
+      "hospital_id": "HOSP-THA-01",
+      "hospital_name": "Siam International Medical Center",
+      "country_code": "THA",
+      "jci_accredited": 1,
+      "n_encounters": 317,
+      "mean_outcome": 88.02,
+      "boot_ci95_low": 87.4,
+      "boot_ci95_high": 88.6,
+      "composite_quality_score": 81.4
+    },
+    {
+      "hospital_id": "HOSP-SGP-02",
+      "hospital_name": "Marina Oncology & Diagnostics Center",
+      "country_code": "SGP",
+      "jci_accredited": 1,
+      "n_encounters": 245,
+      "mean_outcome": 87.9,
+      "boot_ci95_low": 87.19,
+      "boot_ci95_high": 88.58,
+      "composite_quality_score": 80.58
+    },
+    {
+      "hospital_id": "HOSP-THA-02",
+      "hospital_name": "Chao Phraya Heart & Spine Hospital",
+      "country_code": "THA",
+      "jci_accredited": 1,
+      "n_encounters": 343,
+      "mean_outcome": 88.1,
+      "boot_ci95_low": 87.49,
+      "boot_ci95_high": 88.69,
+      "composite_quality_score": 78.64
+    },
+    {
+      "hospital_id": "HOSP-ARE-03",
+      "hospital_name": "Jumeirah Surgical Institute",
+      "country_code": "ARE",
+      "jci_accredited": 1,
+      "n_encounters": 282,
+      "mean_outcome": 87.46,
+      "boot_ci95_low": 86.72,
+      "boot_ci95_high": 88.12,
+      "composite_quality_score": 78.17
+    },
+    {
+      "hospital_id": "HOSP-IND-01",
+      "hospital_name": "Indraprastha Apex Health Institute",
+      "country_code": "IND",
+      "jci_accredited": 1,
+      "n_encounters": 299,
+      "mean_outcome": 87.89,
+      "boot_ci95_low": 87.16,
+      "boot_ci95_high": 88.58,
+      "composite_quality_score": 77.74
+    },
+    {
+      "hospital_id": "HOSP-SGP-01",
+      "hospital_name": "Pacific Rim Quaternary Medical Hub",
+      "country_code": "SGP",
+      "jci_accredited": 1,
+      "n_encounters": 279,
+      "mean_outcome": 87.85,
+      "boot_ci95_low": 87.07,
+      "boot_ci95_high": 88.59,
+      "composite_quality_score": 76.35
+    },
+    {
+      "hospital_id": "HOSP-DEU-01",
+      "hospital_name": "Bavaria International Klinikum",
+      "country_code": "DEU",
+      "jci_accredited": 1,
+      "n_encounters": 408,
+      "mean_outcome": 88.0,
+      "boot_ci95_low": 87.38,
+      "boot_ci95_high": 88.56,
+      "composite_quality_score": 75.85
+    },
+    {
+      "hospital_id": "HOSP-TUR-02",
+      "hospital_name": "Anatolia Care & Oncology Hub",
+      "country_code": "TUR",
+      "jci_accredited": 1,
+      "n_encounters": 426,
+      "mean_outcome": 87.77,
+      "boot_ci95_low": 87.19,
+      "boot_ci95_high": 88.37,
+      "composite_quality_score": 75.58
+    },
+    {
+      "hospital_id": "HOSP-SWE-02",
+      "hospital_name": "Vastra Specialist Hospital",
+      "country_code": "SWE",
+      "jci_accredited": 1,
+      "n_encounters": 129,
+      "mean_outcome": 88.37,
+      "boot_ci95_low": 87.18,
+      "boot_ci95_high": 89.52,
+      "composite_quality_score": 74.79
+    },
+    {
+      "hospital_id": "HOSP-ARE-01",
+      "hospital_name": "Al Noor Gulf Medical Center",
+      "country_code": "ARE",
+      "jci_accredited": 1,
+      "n_encounters": 258,
+      "mean_outcome": 87.89,
+      "boot_ci95_low": 87.04,
+      "boot_ci95_high": 88.67,
+      "composite_quality_score": 74.18
+    },
+    {
+      "hospital_id": "HOSP-DEU-02",
+      "hospital_name": "Spree Valley Medical Center",
+      "country_code": "DEU",
+      "jci_accredited": 1,
+      "n_encounters": 350,
+      "mean_outcome": 88.42,
+      "boot_ci95_low": 87.71,
+      "boot_ci95_high": 89.04,
+      "composite_quality_score": 73.57
+    },
+    {
+      "hospital_id": "HOSP-USA-01",
+      "hospital_name": "Atlantic Academic Medical Center",
+      "country_code": "USA",
+      "jci_accredited": 1,
+      "n_encounters": 282,
+      "mean_outcome": 87.39,
+      "boot_ci95_low": 86.61,
+      "boot_ci95_high": 88.19,
+      "composite_quality_score": 70.15
+    },
+    {
+      "hospital_id": "HOSP-ARE-02",
+      "hospital_name": "Emirates Horizon Specialist Hospital",
+      "country_code": "ARE",
+      "jci_accredited": 1,
+      "n_encounters": 258,
+      "mean_outcome": 87.0,
+      "boot_ci95_low": 86.17,
+      "boot_ci95_high": 87.85,
+      "composite_quality_score": 70.13
+    },
+    {
+      "hospital_id": "HOSP-USA-02",
+      "hospital_name": "Pacific Precision Surgical Hospital",
+      "country_code": "USA",
+      "jci_accredited": 1,
+      "n_encounters": 272,
+      "mean_outcome": 87.36,
+      "boot_ci95_low": 86.5,
+      "boot_ci95_high": 88.13,
+      "composite_quality_score": 69.23
+    },
+    {
+      "hospital_id": "HOSP-IND-02",
+      "hospital_name": "Deccan Cardiac & Transplant Center",
+      "country_code": "IND",
+      "jci_accredited": 1,
+      "n_encounters": 316,
+      "mean_outcome": 87.15,
+      "boot_ci95_low": 86.35,
+      "boot_ci95_high": 87.89,
+      "composite_quality_score": 68.81
+    },
+    {
+      "hospital_id": "HOSP-TUR-01",
+      "hospital_name": "Bosphorus International Hospital",
+      "country_code": "TUR",
+      "jci_accredited": 1,
+      "n_encounters": 345,
+      "mean_outcome": 87.22,
+      "boot_ci95_low": 86.5,
+      "boot_ci95_high": 87.91,
+      "composite_quality_score": 68.72
+    },
+    {
+      "hospital_id": "HOSP-SWE-01",
+      "hospital_name": "Nordic Heart & Ortho Clinic",
+      "country_code": "SWE",
+      "jci_accredited": 1,
+      "n_encounters": 96,
+      "mean_outcome": 86.89,
+      "boot_ci95_low": 85.52,
+      "boot_ci95_high": 88.17,
+      "composite_quality_score": 66.87
+    },
+    {
+      "hospital_id": "HOSP-THA-03",
+      "hospital_name": "Andaman Wellness & Surgery Clinic",
+      "country_code": "THA",
+      "jci_accredited": 0,
+      "n_encounters": 117,
+      "mean_outcome": 83.61,
+      "boot_ci95_low": 82.18,
+      "boot_ci95_high": 84.86,
+      "composite_quality_score": 66.48
+    },
+    {
+      "hospital_id": "HOSP-ARE-04",
+      "hospital_name": "Sharjah Coastal General Hospital",
+      "country_code": "ARE",
+      "jci_accredited": 0,
+      "n_encounters": 153,
+      "mean_outcome": 84.66,
+      "boot_ci95_low": 83.52,
+      "boot_ci95_high": 85.77,
+      "composite_quality_score": 64.73
+    },
+    {
+      "hospital_id": "HOSP-TUR-03",
+      "hospital_name": "Aegean Surgical & Dental Center",
+      "country_code": "TUR",
+      "jci_accredited": 0,
+      "n_encounters": 157,
+      "mean_outcome": 83.82,
+      "boot_ci95_low": 82.65,
+      "boot_ci95_high": 84.94,
+      "composite_quality_score": 62.83
+    },
+    {
+      "hospital_id": "HOSP-DEU-03",
+      "hospital_name": "Rhine Orthopedic Institute",
+      "country_code": "DEU",
+      "jci_accredited": 0,
+      "n_encounters": 202,
+      "mean_outcome": 83.18,
+      "boot_ci95_low": 82.09,
+      "boot_ci95_high": 84.24,
+      "composite_quality_score": 56.06
+    },
+    {
+      "hospital_id": "HOSP-USA-03",
+      "hospital_name": "Midwest Community General Hospital",
+      "country_code": "USA",
+      "jci_accredited": 0,
+      "n_encounters": 234,
+      "mean_outcome": 83.64,
+      "boot_ci95_low": 82.66,
+      "boot_ci95_high": 84.55,
+      "composite_quality_score": 56.03
+    },
+    {
+      "hospital_id": "HOSP-IND-03",
+      "hospital_name": "Western Coast Multi-Specialty Hospital",
+      "country_code": "IND",
+      "jci_accredited": 0,
+      "n_encounters": 132,
+      "mean_outcome": 82.81,
+      "boot_ci95_low": 81.49,
+      "boot_ci95_high": 84.01,
+      "composite_quality_score": 53.8
+    },
+    {
+      "hospital_id": "HOSP-SWE-03",
+      "hospital_name": "Skane Regional Care Center",
+      "country_code": "SWE",
+      "jci_accredited": 0,
+      "n_encounters": 100,
+      "mean_outcome": 81.9,
+      "boot_ci95_low": 80.48,
+      "boot_ci95_high": 83.34,
+      "composite_quality_score": 51.05
+    }
+  ]
+}

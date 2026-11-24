@@ -1,0 +1,9 @@
+country_code,country_name,region,income_group,health_system_model,regulatory_framework,is_major_destination
+ARE,United Arab Emirates,Middle East (GCC),High Income,Mixed Public-Private Insurance,UAE Federal Law No. 2/2019 (ICT Health),1
+SWE,Sweden,Northern Europe (Nordic),High Income,Universal Tax-Funded,EU GDPR + Swedish Patient Data Act (PDL),1
+DEU,Germany,Western Europe,High Income,Statutory Social Health Insurance,EU GDPR + BDSG,1
+TUR,Turkey,Europe / Middle East,Upper-Middle Income,Universal + Private Medical Tourism,KVKK (Law No. 6698),1
+THA,Thailand,Southeast Asia,Upper-Middle Income,Universal + Private International Hubs,Thailand PDPA,1
+IND,India,South Asia,Lower-Middle Income,Private-Dominant + Public Schemes,India DPDP Act 2023,1
+SGP,Singapore,Southeast Asia,High Income,Mixed Public Savings (Medisave) + Private,Singapore PDPA,1
+USA,United States,North America,High Income,Employer/Private + Medicare/Medicaid,HIPAA Privacy & Security Rules,1
